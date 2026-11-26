@@ -90,3 +90,23 @@ h1, h2, h3, h4, h5, h6 {
 .neon-laser-glow {
   filter: drop-shadow(0 0 16px rgba(104, 3, 245, 0.8)) drop-shadow(0 0 32px rgba(147, 51, 234, 0.5));
 }
+
+/* Infinite left-to-right review marquee */
+@keyframes marquee-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-left-to-right 40s linear infinite;
+}
+
+.animate-marquee-ltr:hover {
+  animation-play-state: paused;
+}

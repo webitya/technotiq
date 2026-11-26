@@ -1,9 +1,10 @@
 import Hero from "../components/home/Hero";
-import InteractiveWorkbench from "../components/home/InteractiveWorkbench";
-import ValueMatrix from "../components/home/ValueMatrix";
-import RealCaseStudies from "../components/home/RealCaseStudies";
+import CourseCard from "../components/courses/CourseCard";
+import GoogleReviewsMarquee from "../components/home/GoogleReviewsMarquee";
 import FaqAccordion from "../components/ui/FaqAccordion";
-import { Award, ShieldCheck, Cpu } from "../components/icons";
+import { ALL_COURSES } from "../data/coursesData";
+import Link from "next/link";
+import { ArrowRight } from "../components/icons";
 
 export const metadata = {
   title: "Technotiq | Industrial Automation, IT Solutions & Training",
@@ -40,88 +41,87 @@ const HOME_FAQS = [
 ];
 
 export default function HomePage() {
+  const industrialCourses = ALL_COURSES.filter(
+    (c) => c.category === "industrial-automation"
+  );
+  const bmsCourses = ALL_COURSES.filter(
+    (c) => c.category === "building-management-system"
+  );
+
   return (
     <div>
       {/* 1. Hero Section matching brand screenshot with 3D crystal visual */}
       <Hero />
 
-      {/* 2. Interactive Hardware Lab Workbench Explorer */}
-      <InteractiveWorkbench />
-
-      {/* 3. Integrated Engineering Matrix */}
-      <ValueMatrix />
-
-      {/* 4. Real Industrial Commissioning Case Studies */}
-      <RealCaseStudies />
-
-      {/* 5. Placement & Engineering Impact Section - Light Purple Background */}
-      <section className="py-10 sm:py-14 lg:py-16 bg-purple-50/70 border-t border-b border-purple-100 font-normal">
+      {/* 2. Industrial Automation Courses Section */}
+      <section className="py-12 sm:py-16 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
-              From our test benches to major industrial plants.
-            </h2>
-            <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed font-normal">
-              Whether preparing fresh diploma and degree engineers for plant commissioning
-              or delivering mission-critical IT automation to mid-market companies, here is what
-              sets our ecosystem apart:
-            </p>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider block mb-1">
+                Certification Track 01
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
+                Industrial Automation Courses
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-slate-600 font-normal max-w-2xl">
+                Hands-on laboratory training on authentic Siemens S7-1200, Allen-Bradley PLCs, multi-station SCADA, and turn-key electrical control panels.
+              </p>
+            </div>
+            <Link
+              href="/courses/industrial-automation"
+              className="inline-flex items-center text-xs sm:text-sm font-medium text-[#6803F5] hover:text-[#5502C7] transition-colors shrink-0"
+            >
+              <span>View All Industrial Tracks</span>
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-purple-100 shadow-xs hover:shadow-md transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-purple-50 text-[#6803F5] flex items-center justify-center mb-4">
-                <Award className="w-5 h-5" />
-              </div>
-              <p className="text-2xl sm:text-3xl font-medium text-slate-900 font-heading">
-                94%
-              </p>
-              <h3 className="text-base font-medium text-slate-900 mt-1 mb-1">
-                Placement Assistance
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                Dedicated placement pipeline connecting trainees to verified plant automation
-                firms, panel builders, and IoT infrastructure providers.
-              </p>
-            </div>
-
-            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-purple-100 shadow-xs hover:shadow-md transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-cyan-50 text-[#27B2DD] flex items-center justify-center mb-4">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <p className="text-2xl sm:text-3xl font-medium text-slate-900 font-heading">
-                120+
-              </p>
-              <h3 className="text-base font-medium text-slate-900 mt-1 mb-1">
-                Hands-on Lab Hours
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                Structured laboratory exercises on Siemens, Allen-Bradley, Wonderware, and
-                microcontroller test beds with 1-on-1 instructor reviews.
-              </p>
-            </div>
-
-            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-purple-100 shadow-xs hover:shadow-md transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#276CB9] flex items-center justify-center mb-4">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <p className="text-2xl sm:text-3xl font-medium text-slate-900 font-heading">
-                40+
-              </p>
-              <h3 className="text-base font-medium text-slate-900 mt-1 mb-1">
-                Delivered Engineering Projects
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                Turnkey PLC/SCADA commissioning, BMS retrofits, IP security infrastructure,
-                and custom enterprise web applications delivered on schedule.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {industrialCourses.map((course) => (
+              <CourseCard key={course.id} course={course} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 6. FAQs Section - Compact */}
-      <section className="py-12 sm:py-16 bg-white">
+      {/* 3. Building Management System (BMS) Section */}
+      <section className="py-12 sm:py-16 bg-purple-50/60 border-t border-b border-purple-100 font-normal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider block mb-1">
+                Certification Track 02
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
+                Building Management System (BMS) & Security
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-slate-600 font-normal max-w-2xl">
+                Comprehensive engineering qualification across Direct Digital Controllers (DDC), HVAC chiller telemetry, and optical fiber IP CCTV surveillance networks.
+              </p>
+            </div>
+            <Link
+              href="/courses/building-management-system"
+              className="inline-flex items-center text-xs sm:text-sm font-medium text-[#6803F5] hover:text-[#5502C7] transition-colors shrink-0"
+            >
+              <span>View All BMS Tracks</span>
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {bmsCourses.map((course) => (
+              <CourseCard key={course.id} course={course} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Google Reviews Infinite Left-to-Right Carousel */}
+      <GoogleReviewsMarquee />
+
+      {/* 5. FAQs Section */}
+      <section className="py-12 sm:py-16 bg-white border-t border-slate-100 font-normal">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FaqAccordion
             items={HOME_FAQS}
