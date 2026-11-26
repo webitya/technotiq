@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-plus-jakarta: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Brand Palette */
+  --brand-violet: #6803F5;
+  --brand-violet-hover: #5502C7;
+  --brand-violet-light: #F3E8FF;
+  --brand-cyan: #27B2DD;
+  --brand-blue: #276CB9;
+  --brand-dark: #000000;
+  --brand-slate-dark: #1E293B;
+  --brand-slate-body: #475569;
+  --brand-slate-muted: #64748B;
+  --brand-border: #E2E8F0;
+  --brand-surface: #F8F9FE;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-plus-jakarta);
+  --font-mono: var(--font-mono);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-violet: #6803F5;
+  --color-brand-violet-hover: #5502C7;
+  --color-brand-violet-light: #F3E8FF;
+  --color-brand-cyan: #27B2DD;
+  --color-brand-blue: #276CB9;
+  --color-brand-dark: #000000;
+  --color-brand-slate-dark: #1E293B;
+  --color-brand-slate: #475569;
+  --color-brand-muted: #64748B;
+  --color-brand-border: #E2E8F0;
+  --color-brand-surface: #F8F9FE;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+  color: #334155;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+/* Headings: Clean, modern, understated font weight (not heavy bold) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-plus-jakarta);
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+/* Custom Utilities for Clean Human Design */
+.hero-glow-bg {
+  background: radial-gradient(circle at 85% 30%, rgba(104, 3, 245, 0.05) 0%, rgba(39, 178, 221, 0.04) 35%, rgba(255, 255, 255, 0) 70%),
+              radial-gradient(circle at 15% 85%, rgba(39, 108, 185, 0.03) 0%, rgba(255, 255, 255, 0) 50%),
+              #FFFFFF;
+}
+
+.subtle-grid {
+  background-image: linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.text-gradient-violet {
+  background: linear-gradient(135deg, #6803F5 0%, #9333EA 50%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-tech {
+  background: linear-gradient(135deg, #27B2DD 0%, #276CB9 50%, #6803F5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
