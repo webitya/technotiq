@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import JsonLd from "../components/ui/JsonLd";
+import StickyContactButtons from "../components/ui/StickyContactButtons";
 
 export const metadata = {
   metadataBase: new URL("https://technotiq.in"),
@@ -88,6 +89,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <StickyContactButtons />
       </body>
     </html>
   );
