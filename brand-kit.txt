@@ -1,0 +1,228 @@
+================================================================================
+                    TECHNOTIQ - OFFICIAL BRAND KIT & STYLE GUIDE
+================================================================================
+
+1. BRAND OVERVIEW & IDENTITY
+--------------------------------------------------------------------------------
+Brand Name:                Technotiq
+Full Registered Entity:    Technotiq Automation Private Limited
+Website:                   https://technotiq.in
+Contact Phone:             +91 6299 916713
+Contact Email:             technotiqautomation@gmail.com
+Primary Domains:           - IT Services & Custom Software Development
+                           - Digital Marketing & SEO / Growth
+                           - Industrial Automation (PLC, SCADA, BMS, CCTV, Embedded)
+                           - AI & Emerging Technologies
+                           - Hands-on Industry Training & Placements
+
+Brand Slogans & Taglines:
+  • Primary Slogan:        "Technology. Innovation. Excellence."
+  • Hero Headline:         "Explore the World of TECHNOTIQ"
+  • Sub-Headline:          "Transform Technical Skills into Real-World Expertise."
+  • Mission Statement:     "Master Industrial Automation, PLC, SCADA, BMS, CCTV, 
+                            Embedded Systems, AI and emerging technologies through 
+                            hands-on training, practical projects and industry-focused 
+                            learning."
+  • Footer Micro-copy:     "Building Skills. Delivering Solutions. Shaping the Future."
+
+Visual Persona:            Futuristic, Precision-Driven, Technologically Advanced,
+                           Clean, Professional, Inspiring, High-Performance.
+
+
+================================================================================
+2. COLOR PALETTE SPECIFICATIONS
+================================================================================
+
+[A] PRIMARY ACCENT COLORS (Hero & Interactive Accents)
+--------------------------------------------------------------------------------
+1. Electric Violet / Brand Accent (Hero Highlight, Eyebrow Text, Glowing Accents)
+   • Hex:        #6803F5  /  #6B02F2  (Tailwind alternative: #7C3AED / Violet-600)
+   • RGB:        rgb(104, 3, 245)
+   • HSL:        hsl(265, 98%, 49%)
+   • Usage:      Brand name emphasis ("TECHNOTIQ"), eyebrow badge text, active states,
+                 glow borders, primary gradient stops.
+
+2. Cyber Cyan / Automation Teal (Logo Mark Accent & Tech Visuals)
+   • Hex:        #27B2DD  /  #38BDF8
+   • RGB:        rgb(39, 178, 221)
+   • HSL:        hsl(194, 73%, 51%)
+   • Usage:      Secondary accent in logo icon, IoT/automation highlights, 
+                 interactive tooltips, subtle cyan ambient glows.
+
+3. Cobalt / Royal Tech Blue (Logo Body & Corporate Foundation)
+   • Hex:        #276CB9  /  #2959AB
+   • RGB:        rgb(39, 108, 185)
+   • HSL:        hsl(212, 65%, 44%)
+   • Usage:      Corporate identity, badges, professional certifications, links.
+
+[B] NEUTRAL & TYPOGRAPHY PALETTE
+--------------------------------------------------------------------------------
+1. Obsidian Black (Primary Headings & CTA Buttons)
+   • Hex:        #000000  (Deep Dark: #0A0A0A / #0F172A)
+   • RGB:        rgb(0, 0, 0)
+   • Usage:      Main Hero Headline text ("Explore the World of"), Primary CTA 
+                 button backgrounds, top navigation "Book a discovery call" button.
+
+2. Deep Slate / Charcoal (Subheadings & Card Titles)
+   • Hex:        #1E293B  (Slate-800)
+   • RGB:        rgb(30, 41, 59)
+   • Usage:      H2 headings ("Transform Technical Skills into Real-World Expertise"),
+                 sub-titles, modal headers.
+
+3. Slate Gray (Body Copy & Descriptions)
+   • Hex:        #475569  (Slate-600) / #334155 (Slate-700)
+   • RGB:        rgb(71, 85, 105)
+   • Usage:      Paragraph copy, feature lists, course curriculum details.
+
+4. Muted Gray (Secondary Metadata & Captions)
+   • Hex:        #64748B  (Slate-500)
+   • RGB:        rgb(100, 116, 139)
+   • Usage:      Breadcrumbs, timestamps, micro-copy, inactive tabs.
+
+[C] BACKGROUNDS & SURFACE COLORS
+--------------------------------------------------------------------------------
+1. Pure White (Canvas Base)
+   • Hex:        #FFFFFF
+   • Usage:      Main website background, cards, input fields, button text.
+
+2. Ambient Lilac Glow / Hero Tint (Light 3D Atmosphere)
+   • Hex:        #F8F9FE  /  #F5F3FF (Violet-50)
+   • RGB:        rgb(248, 249, 254)
+   • Usage:      Hero section backdrop, subtle card hover backgrounds, gradient stops.
+
+3. Soft Border Gray
+   • Hex:        #E2E8F0  (Slate-200)
+   • RGB:        rgb(226, 232, 240)
+   • Usage:      Card borders, secondary button borders, dividers.
+
+[D] BRAND GRADIENTS
+--------------------------------------------------------------------------------
+• Hero Violet Gradient:
+  linear-gradient(135deg, #6803F5 0%, #9333EA 50%, #C084FC 100%)
+• Cyber Tech Gradient:
+  linear-gradient(135deg, #27B2DD 0%, #276CB9 50%, #6803F5 100%)
+• Ambient Hero Glow:
+  radial-gradient(ellipse at 80% 40%, rgba(104, 3, 245, 0.12) 0%, rgba(39, 178, 221, 0.08) 40%, transparent 70%)
+
+
+================================================================================
+3. TYPOGRAPHY SYSTEM
+================================================================================
+
+[A] FONT FAMILIES
+--------------------------------------------------------------------------------
+1. Primary Display & Heading Font:
+   • Primary Choice:    Plus Jakarta Sans  (Google Fonts)
+   • Fallback / Alt:    Inter, Poppins, sans-serif
+   • Web Link:          https://fonts.google.com/specimen/Plus+Jakarta+Sans
+   • Personality:       Geometric, modern, ultra-clean, technical yet approachable.
+
+2. Body & UI Font:
+   • Primary Choice:    Inter  (Google Fonts)  or  Plus Jakarta Sans
+   • Fallback:          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+   • Web Link:          https://fonts.google.com/specimen/Inter
+   • Personality:       Highly legible at all sizes, neutral, optimized for screens.
+
+3. Code & Technical Monospace:
+   • Primary Choice:    JetBrains Mono  or  Geist Mono
+   • Usage:             Code blocks, PLC ladder tags, SCADA variables, API docs.
+
+[B] TYPE HIERARCHY & SIZING
+--------------------------------------------------------------------------------
+Element               Font Family          Weight         Size (Desktop/Mobile)   Line Height    Letter Spacing
+--------------------  -------------------  -------------  ----------------------  -------------  --------------
+Hero Eyebrow Badge    Plus Jakarta Sans    Medium (500)   13px - 14px             1.4            +0.02em
+Hero Headline (H1)    Plus Jakarta Sans    Bold (700)     48px - 60px / 32px      1.15           -0.03em
+Section Title (H2)    Plus Jakarta Sans    SemiBold(600)  32px - 38px / 24px      1.25           -0.02em
+Card / Sub-Head (H3)  Plus Jakarta Sans    SemiBold(600)  20px - 24px / 18px      1.35           -0.01em
+Body Text (Regular)   Inter                Regular (400)  16px / 15px             1.65           normal
+Body Text (Small)     Inter                Regular (400)  14px / 13px             1.5            normal
+Button Text           Plus Jakarta Sans    Medium (500)   14px - 15px             1.0            normal
+
+
+================================================================================
+4. UI COMPONENT & DESIGN PATTERNS
+================================================================================
+
+[A] BUTTONS
+--------------------------------------------------------------------------------
+1. Primary CTA ("Book a discovery call ->"):
+   • Shape:          Pill / Full Capsule (border-radius: 9999px)
+   • Background:     #000000  (Solid Black)
+   • Text Color:     #FFFFFF  (Pure White)
+   • Padding:        12px 24px (or py-3 px-6)
+   • Hover State:    #1E293B  or  transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+   • Icon:           Arrow right ("→")
+
+2. Secondary Button ("View automation examples"):
+   • Shape:          Pill / Full Capsule (border-radius: 9999px)
+   • Background:     #FFFFFF  (Pure White)
+   • Border:         1px solid #E2E8F0
+   • Text Color:     #0F172A
+   • Hover State:    Background #F8FAFC, border-color #CBD5E1
+
+3. Eyebrow Badge Pill ("✦ Technology. Innovation. Excellence."):
+   • Shape:          Pill (border-radius: 9999px)
+   • Background:     rgba(104, 3, 245, 0.06)  or  #F3E8FF (very light violet)
+   • Text Color:     #6803F5  (Electric Violet)
+   • Border:         1px solid rgba(104, 3, 245, 0.15)
+   • Leading Icon:   Four-point star sparkle ("✦")
+
+[B] CARDS & VISUAL MOTIFS
+--------------------------------------------------------------------------------
+• Corner Radius:     16px - 24px (rounded-2xl) for cards; 9999px (rounded-full) for buttons/badges
+• Card Background:   #FFFFFF with subtle 1px border (#E2E8F0)
+• Shadows:           Soft ambient multi-layered shadows (0 10px 30px -10px rgba(0,0,0,0.05))
+• 3D Imagery:        Minimalist 3D isometric geometric cubes, glassmorphism, luminous 
+                     violet & cyan neon line accents
+
+
+================================================================================
+5. WEB DEVELOPER INTEGRATION TOKENS
+================================================================================
+
+[A] CSS VARIABLES (:root)
+--------------------------------------------------------------------------------
+:root {
+  /* Brand Core Colors */
+  --brand-violet:       #6803F5;
+  --brand-violet-hover: #5502C7;
+  --brand-violet-light: #F3E8FF;
+  --brand-cyan:         #27B2DD;
+  --brand-blue:         #276CB9;
+
+  /* Typography & Neutrals */
+  --color-black:        #000000;
+  --color-dark:         #0F172A;
+  --color-slate-dark:   #1E293B;
+  --color-slate-body:   #475569;
+  --color-slate-muted:  #64748B;
+  --color-border:       #E2E8F0;
+  --color-bg-ambient:   #F8F9FE;
+
+  /* Font Families */
+  --font-heading:       'Plus Jakarta Sans', sans-serif;
+  --font-body:          'Inter', sans-serif;
+  --font-code:          'JetBrains Mono', monospace;
+
+  /* Gradients */
+  --gradient-violet:    linear-gradient(135deg, #6803F5 0%, #9333EA 50%, #C084FC 100%);
+  --gradient-cyber:     linear-gradient(135deg, #27B2DD 0%, #276CB9 50%, #6803F5 100%);
+}
+
+[B] TAILWIND CSS v4 CONFIGURATION SNIPPET (@theme inline)
+--------------------------------------------------------------------------------
+@theme inline {
+  --color-technotiq-violet:       #6803F5;
+  --color-technotiq-violet-light: #F3E8FF;
+  --color-technotiq-cyan:         #27B2DD;
+  --color-technotiq-blue:         #276CB9;
+  --color-technotiq-dark:         #0F172A;
+  --color-technotiq-slate:        #475569;
+  
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-sans:    'Inter', sans-serif;
+}
+================================================================================
+File generated for Technotiq Automation Private Limited (technotiq.in).
+================================================================================
