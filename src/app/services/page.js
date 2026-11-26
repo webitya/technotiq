@@ -231,26 +231,26 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Engineering Delivery Process - Compact, No Heading Badge */}
-      <section className="py-12 sm:py-16 bg-slate-900 text-white border-t border-slate-800 font-normal">
+      {/* Engineering Delivery Process - Light Purple Background */}
+      <section className="py-10 sm:py-14 lg:py-16 bg-purple-50/70 border-t border-b border-purple-100 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-8">
-            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-white leading-tight">
+          <div className="max-w-3xl mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
               A structured lifecycle designed for zero operational surprises.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {PROCESS_STEPS.map((step, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-3xl bg-slate-800/80 border border-slate-700/80 backdrop-blur-sm"
+                className="p-5 sm:p-6 rounded-3xl bg-white border border-purple-100 shadow-xs hover:shadow-md transition-all"
               >
-                <span className="text-xl font-mono font-medium text-[#8B5CF6] block mb-2">
+                <span className="text-xl font-mono font-medium text-[#6803F5] block mb-2">
                   {step.step}
                 </span>
-                <h3 className="text-base font-medium text-white mb-1.5">{step.title}</h3>
-                <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                <h3 className="text-base font-medium text-slate-900 mb-1.5">{step.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                   {step.desc}
                 </p>
               </div>

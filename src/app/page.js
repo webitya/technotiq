@@ -3,8 +3,7 @@ import InteractiveWorkbench from "../components/home/InteractiveWorkbench";
 import ValueMatrix from "../components/home/ValueMatrix";
 import RealCaseStudies from "../components/home/RealCaseStudies";
 import FaqAccordion from "../components/ui/FaqAccordion";
-import Link from "next/link";
-import { Award, ShieldCheck, Cpu, ArrowRight } from "../components/icons";
+import { Award, ShieldCheck, Cpu } from "../components/icons";
 
 export const metadata = {
   title: "Technotiq | Industrial Automation, IT Solutions & Training",
@@ -55,78 +54,68 @@ export default function HomePage() {
       {/* 4. Real Industrial Commissioning Case Studies */}
       <RealCaseStudies />
 
-      {/* 5. Placement & Engineering Impact Section - Compact, No Heading Badge */}
-      <section className="py-12 sm:py-16 bg-slate-900 text-white border-t border-slate-800 font-normal">
+      {/* 5. Placement & Engineering Impact Section - Light Purple Background */}
+      <section className="py-10 sm:py-14 lg:py-16 bg-purple-50/70 border-t border-b border-purple-100 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-8">
-            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-white leading-tight">
+          <div className="max-w-3xl mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
               From our test benches to major industrial plants.
             </h2>
-            <p className="mt-2 text-sm text-slate-300 leading-relaxed font-normal">
+            <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed font-normal">
               Whether preparing fresh diploma and degree engineers for plant commissioning
               or delivering mission-critical IT automation to mid-market companies, here is what
               sets our ecosystem apart:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-3xl bg-slate-800/80 border border-slate-700/80 backdrop-blur-sm">
-              <div className="w-10 h-10 rounded-2xl bg-purple-500/10 text-[#8B5CF6] flex items-center justify-center mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-purple-100 shadow-xs hover:shadow-md transition-all">
+              <div className="w-10 h-10 rounded-2xl bg-purple-50 text-[#6803F5] flex items-center justify-center mb-4">
                 <Award className="w-5 h-5" />
               </div>
-              <p className="text-2xl sm:text-3xl font-medium text-white font-heading">
+              <p className="text-2xl sm:text-3xl font-medium text-slate-900 font-heading">
                 94%
               </p>
-              <h3 className="text-base font-medium text-white mt-1 mb-1">
+              <h3 className="text-base font-medium text-slate-900 mt-1 mb-1">
                 Placement Assistance
               </h3>
-              <p className="text-xs text-slate-400 leading-relaxed font-normal">
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
                 Dedicated placement pipeline connecting trainees to verified plant automation
                 firms, panel builders, and IoT infrastructure providers.
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-slate-800/80 border border-slate-700/80 backdrop-blur-sm">
-              <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 text-[#27B2DD] flex items-center justify-center mb-4">
+            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-purple-100 shadow-xs hover:shadow-md transition-all">
+              <div className="w-10 h-10 rounded-2xl bg-cyan-50 text-[#27B2DD] flex items-center justify-center mb-4">
                 <Cpu className="w-5 h-5" />
               </div>
-              <p className="text-2xl sm:text-3xl font-medium text-white font-heading">
+              <p className="text-2xl sm:text-3xl font-medium text-slate-900 font-heading">
                 120+
               </p>
-              <h3 className="text-base font-medium text-white mt-1 mb-1">
+              <h3 className="text-base font-medium text-slate-900 mt-1 mb-1">
                 Hands-on Lab Hours
               </h3>
-              <p className="text-xs text-slate-400 leading-relaxed font-normal">
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
                 Structured laboratory exercises on Siemens, Allen-Bradley, Wonderware, and
                 microcontroller test beds with 1-on-1 instructor reviews.
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-slate-800/80 border border-slate-700/80 backdrop-blur-sm">
-              <div className="w-10 h-10 rounded-2xl bg-blue-500/10 text-[#60A5FA] flex items-center justify-center mb-4">
+            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-purple-100 shadow-xs hover:shadow-md transition-all">
+              <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#276CB9] flex items-center justify-center mb-4">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <p className="text-2xl sm:text-3xl font-medium text-white font-heading">
+              <p className="text-2xl sm:text-3xl font-medium text-slate-900 font-heading">
                 40+
               </p>
-              <h3 className="text-base font-medium text-white mt-1 mb-1">
+              <h3 className="text-base font-medium text-slate-900 mt-1 mb-1">
                 Delivered Engineering Projects
               </h3>
-              <p className="text-xs text-slate-400 leading-relaxed font-normal">
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
                 Turnkey PLC/SCADA commissioning, BMS retrofits, IP security infrastructure,
                 and custom enterprise web applications delivered on schedule.
               </p>
             </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <Link
-              href="/courses"
-              className="inline-flex items-center text-xs sm:text-sm font-normal text-[#27B2DD] hover:underline"
-            >
-              <span>Explore course tracks, hardware kits, and batch schedules</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-            </Link>
           </div>
         </div>
       </section>

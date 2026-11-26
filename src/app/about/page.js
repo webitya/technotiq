@@ -93,17 +93,17 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-4 font-normal">
-                <h3 className="text-base font-medium text-white tracking-tight border-b border-slate-800 pb-3">
+              <div className="bg-purple-50/80 text-slate-800 rounded-3xl p-6 sm:p-8 border border-purple-200/80 shadow-sm space-y-4 font-normal">
+                <h3 className="text-base font-medium text-slate-900 tracking-tight border-b border-purple-200/60 pb-3">
                   Organization Credentials
                 </h3>
 
-                <div className="space-y-3 text-xs sm:text-sm text-slate-300 font-normal">
+                <div className="space-y-3 text-xs sm:text-sm text-slate-700 font-normal">
                   <div>
                     <span className="text-xs font-mono text-slate-500 block">
                       Entity Name
                     </span>
-                    <span className="text-white font-normal text-sm">
+                    <span className="text-slate-900 font-medium text-sm">
                       Technotiq Automation Private Limited
                     </span>
                   </div>
@@ -112,7 +112,7 @@ export default function AboutPage() {
                     <span className="text-xs font-mono text-slate-500 block">
                       Core Verticals
                     </span>
-                    <span>
+                    <span className="text-slate-700">
                       Industrial Automation, Building Management Systems, IP CCTV, Custom Software,
                       AI Workflows, Technical Training.
                     </span>
@@ -122,7 +122,7 @@ export default function AboutPage() {
                     <span className="text-xs font-mono text-slate-500 block">
                       Location
                     </span>
-                    <span className="flex items-center gap-1.5 text-white">
+                    <span className="flex items-center gap-1.5 text-slate-900 font-medium">
                       <MapPin className="w-3.5 h-3.5 text-[#27B2DD]" />
                       Ranchi, Jharkhand, India
                     </span>
@@ -133,17 +133,15 @@ export default function AboutPage() {
                       Direct Support
                     </span>
                     <div className="space-y-0.5 mt-0.5 font-mono text-xs">
-                      <a href="tel:+916299916713" className="block text-[#27B2DD] hover:underline">
+                      <a href="tel:+916299916713" className="block text-[#6803F5] hover:underline font-medium">
                         +91 6299 916713
                       </a>
-                      <a href="mailto:technotiqautomation@gmail.com" className="block text-[#6803F5] hover:underline">
+                      <a href="mailto:technotiqautomation@gmail.com" className="block text-[#6803F5] hover:underline font-medium">
                         technotiqautomation@gmail.com
                       </a>
                     </div>
                   </div>
                 </div>
-
-
               </div>
             </div>
           </div>
