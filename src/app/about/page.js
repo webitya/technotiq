@@ -1,8 +1,7 @@
 import PageHeader from "../../components/layout/PageHeader";
 import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
-import Link from "next/link";
-import { ArrowRight, MapPin } from "../../components/icons";
+import { ArrowRight, MapPin, CheckCircle, ShieldCheck } from "../../components/icons";
 
 export const metadata = {
   title: "About Us | Technotiq Automation Private Limited",
@@ -10,30 +9,39 @@ export const metadata = {
     "Learn about Technotiq: Ranchi's leading industrial automation, technical training academy, and enterprise IT engineering company. Bridging physical hardware with modern software.",
 };
 
-export default function AboutPage() {
-  const values = [
-    {
-      title: "Physical Hardware First",
-      description:
-        "Industrial engineering cannot be mastered solely behind a computer screen. We mandate extensive physical test-rig time so trainees understand relay chatter, noise interference, and 24VDC polarity as intuitively as software logic.",
-    },
-    {
-      title: "Zero Simulation-Only Fluff",
-      description:
-        "While simulators have their place in early conceptual drafts, real industrial plants present grounding loops, line loss, and timing jitter. We teach real-world resilience.",
-    },
-    {
-      title: "Full-Stack Convergence",
-      description:
-        "Modern factories and modern businesses need systems that talk to each other. We train and build at the intersection of shop-floor PLCs and cloud-native databases.",
-    },
-    {
-      title: "Measurable Placement & ROI",
-      description:
-        "For students, we focus on verified technical competencies that hiring managers immediately respect. For clients, we deliver automation that demonstrably slashes downtime.",
-    },
-  ];
+const COMPARISONS = [
+  {
+    topic: "Practical Lab Exposure",
+    academic: "Simulation software only on desktop PCs; zero physical contact with live relays or high-voltage circuits.",
+    technotiq: "Over 80% lab time spent wiring live 24VDC panels, calibrating 4-20mA sensors, and downloading logic to physical PLCs.",
+  },
+  {
+    topic: "Hardware Platforms",
+    academic: "Single brand, often obsolete educational PLC trainer kits dating from 10+ years ago.",
+    technotiq: "Current industrial industry standard controllers: Siemens S7-1200/1500, Allen-Bradley Micro850, and Schneider VFDs.",
+  },
+  {
+    topic: "Troubleshooting Training",
+    academic: "Clean pre-wired benches where systems rarely fail and errors are ignored.",
+    technotiq: "Deliberate fault injection: blown fuses, loose terminal connections, ground noise, and inverted signal polarity debugging.",
+  },
+  {
+    topic: "Instructors & Faculty",
+    academic: "Academic lecturers with theoretical qualifications but limited on-site commissioning experience.",
+    technotiq: "Active plant commissioning engineers who design, wire, and troubleshoot factory automation projects nationwide.",
+  },
+];
 
+const LAB_MANIFEST = [
+  { category: "Programmable Controllers", items: "Siemens S7-1200 (CPU 1214C), Allen-Bradley Micro850, Delta DVP-14SS2, Schneider TM221" },
+  { category: "Supervisory SCADA Systems", items: "AVEVA Wonderware InTouch V2020, Siemens WinCC Unified, Inductive Automation Ignition" },
+  { category: "Building Automation (BMS)", items: "Honeywell BACnet DDC Controllers, Schneider Belimo 0-10V Valve Actuators, Multi-function Energy Meters" },
+  { category: "IP CCTV Infrastructure", items: "Hikvision 4K IP Bullet & Dome cameras, 32-channel NVR RAID-5, Cisco Gigabit PoE+ switches, SFP Fiber loops" },
+  { category: "Test & Measurement", items: "100MHz 2-Channel Digital Storage Oscilloscopes (DSOs), USB 8-Channel Logic Analyzers, True-RMS Multimeters" },
+  { category: "Embedded Microcontrollers", items: "STM32F401 Nucleo ARM Cortex-M4, ESP32 Dual-Core DevKitC, RS-485 Modbus shield modules" },
+];
+
+export default function AboutPage() {
   return (
     <div>
       <PageHeader
@@ -44,11 +52,11 @@ export default function AboutPage() {
       />
 
       {/* Origin Story & Vision */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <p className="text-xs font-normal tracking-wider text-[#6803F5] uppercase">
+              <p className="text-xs font-normal tracking-widest text-[#6803F5] uppercase">
                 Our Foundation & Mission
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
@@ -148,33 +156,65 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Engineering Values */}
-      <section className="py-20 bg-slate-50 border-t border-b border-slate-200">
+      {/* Concrete Comparison: College vs Technotiq */}
+      <section className="py-20 bg-slate-50 border-t border-b border-slate-200 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-16">
-            <p className="text-xs font-normal tracking-wider text-[#6803F5] uppercase mb-3">
-              Guiding Principles
+          <div className="max-w-3xl mb-14">
+            <p className="text-xs font-normal tracking-widest text-[#6803F5] uppercase mb-3">
+              The Training Reality
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
-              Our engineering philosophy is grounded in discipline.
+              Why traditional college coaching fails to produce plant-ready engineers.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((val, idx) => (
+          <div className="space-y-4">
+            {COMPARISONS.map((row, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between"
+                className="grid grid-cols-1 md:grid-cols-12 rounded-2xl bg-white border border-slate-200 overflow-hidden"
               >
-                <div>
-                  <span className="text-xs font-mono font-medium text-[#6803F5] block mb-4">
-                    0{idx + 1}
-                  </span>
-                  <h3 className="text-lg font-medium text-slate-900 mb-3">{val.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                    {val.description}
-                  </p>
+                <div className="md:col-span-3 p-5 sm:p-6 bg-slate-50/70 border-b md:border-b-0 md:border-r border-slate-200 flex items-center">
+                  <span className="text-sm font-medium text-slate-900">{row.topic}</span>
                 </div>
+                <div className="md:col-span-4 p-5 sm:p-6 text-sm text-slate-500 border-b md:border-b-0 md:border-r border-slate-200">
+                  <span className="text-xs font-mono uppercase text-red-500 block mb-1">Standard Academic Program</span>
+                  {row.academic}
+                </div>
+                <div className="md:col-span-5 p-5 sm:p-6 text-sm text-slate-800 bg-purple-50/20">
+                  <span className="text-xs font-mono uppercase text-[#6803F5] block mb-1">Technotiq Engineering Standard</span>
+                  {row.technotiq}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Concrete Lab Equipment Manifest */}
+      <section className="py-20 bg-white font-normal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="text-xs font-normal tracking-widest text-[#27B2DD] uppercase mb-3">
+              Verifiable Laboratory Asset List
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+              Hardware inventory installed in our Ranchi training lab.
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 font-normal">
+              We welcome prospective trainees and plant managers to inspect any of these active test benches during our open lab hours.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {LAB_MANIFEST.map((item, idx) => (
+              <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                <span className="text-xs font-mono text-[#6803F5] uppercase tracking-wider block">
+                  {item.category}
+                </span>
+                <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                  {item.items}
+                </p>
               </div>
             ))}
           </div>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -11,7 +12,7 @@
   --brand-violet-light: #F3E8FF;
   --brand-cyan: #27B2DD;
   --brand-blue: #276CB9;
-  --brand-dark: #000000;
+  --brand-dark: #0B0F19;
   --brand-slate-dark: #1E293B;
   --brand-slate-body: #475569;
   --brand-slate-muted: #64748B;
@@ -29,7 +30,7 @@
   --color-brand-violet-light: #F3E8FF;
   --color-brand-cyan: #27B2DD;
   --color-brand-blue: #276CB9;
-  --color-brand-dark: #000000;
+  --color-brand-dark: #0B0F19;
   --color-brand-slate-dark: #1E293B;
   --color-brand-slate: #475569;
   --color-brand-muted: #64748B;
@@ -43,6 +44,7 @@ body {
   background-color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 /* Headings: Clean, modern, understated font weight (not heavy bold) */
@@ -52,21 +54,23 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-/* Custom Utilities for Clean Human Design */
-.hero-glow-bg {
-  background: radial-gradient(circle at 85% 30%, rgba(104, 3, 245, 0.05) 0%, rgba(39, 178, 221, 0.04) 35%, rgba(255, 255, 255, 0) 70%),
-              radial-gradient(circle at 15% 85%, rgba(39, 108, 185, 0.03) 0%, rgba(255, 255, 255, 0) 50%),
-              #FFFFFF;
+/* Atmospheric Hero Glow matching reference screenshot */
+.hero-scene-bg {
+  background: 
+    radial-gradient(ellipse 70% 60% at 80% 35%, rgba(104, 3, 245, 0.08) 0%, rgba(168, 85, 247, 0.04) 30%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 15% 75%, rgba(39, 178, 221, 0.05) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAFAFF 100%);
 }
 
-.subtle-grid {
-  background-image: linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
-  background-size: 48px 48px;
+.subtle-blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(104, 3, 245, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(104, 3, 245, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 .text-gradient-violet {
-  background: linear-gradient(135deg, #6803F5 0%, #9333EA 50%, #C084FC 100%);
+  background: linear-gradient(135deg, #6803F5 0%, #7C3AED 45%, #9333EA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -75,4 +79,9 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, #27B2DD 0%, #276CB9 50%, #6803F5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Neon laser streak glow */
+.neon-laser-glow {
+  filter: drop-shadow(0 0 16px rgba(104, 3, 245, 0.8)) drop-shadow(0 0 32px rgba(147, 51, 234, 0.5));
 }

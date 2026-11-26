@@ -1,6 +1,6 @@
 import PageHeader from "../../components/layout/PageHeader";
 import ContactForm from "../../components/contact/ContactForm";
-import { Phone, Mail, MapPin, ShieldCheck } from "../../components/icons";
+import { Phone, Mail, MapPin, ShieldCheck, ArrowRight } from "../../components/icons";
 
 export const metadata = {
   title: "Contact Us | Technotiq Automation Private Limited",
@@ -18,7 +18,7 @@ export default function ContactPage() {
         breadcrumbs={[{ name: "Contact" }]}
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Column: Direct Contacts & Operations */}
@@ -36,6 +36,25 @@ export default function ContactPage() {
                 </p>
               </div>
 
+              {/* Direct WhatsApp Quick Contact Pill */}
+              <a
+                href="https://wa.me/916299916713?text=Hi%20Technotiq%20Team,%20I%20would%20like%20to%20inquire%20about%20your%20services%20and%20courses."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 hover:bg-emerald-100 transition-colors group cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-mono">
+                    WA
+                  </div>
+                  <div>
+                    <span className="text-sm font-medium block">Chat directly on WhatsApp</span>
+                    <span className="text-xs text-emerald-700">+91 6299 916713 • Instant Response</span>
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-emerald-700 group-hover:translate-x-1 transition-transform" />
+              </a>
+
               {/* Contact Cards */}
               <div className="space-y-4">
                 <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
@@ -44,7 +63,7 @@ export default function ContactPage() {
                       <Phone className="w-5 h-5" />
                     </div>
                     <span className="text-xs font-mono text-slate-500 uppercase font-normal">
-                      Call / WhatsApp
+                      Call / Direct Desk
                     </span>
                   </div>
                   <a
@@ -84,7 +103,7 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <span className="text-xs font-mono text-slate-500 uppercase font-normal">
-                      Headquarters & Laboratory
+                      Headquarters & Training Facility
                     </span>
                   </div>
                   <p className="text-base font-medium text-slate-900">
@@ -94,7 +113,7 @@ export default function ContactPage() {
                     Ranchi, Jharkhand, India
                   </p>
                   <p className="text-xs text-slate-500 mt-2 font-normal">
-                    In-person laboratory walkthroughs available by prior appointment.
+                    Open Lab Tours: Daily at 11:30 AM & 4:30 PM by prior appointment.
                   </p>
                 </div>
               </div>
@@ -114,7 +133,7 @@ export default function ContactPage() {
 
             {/* Right Column: Interactive Form */}
             <div className="lg:col-span-7">
-              <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl shadow-slate-200/50">
+              <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl shadow-slate-200/40">
                 <div className="mb-8 pb-4 border-b border-slate-100">
                   <h3 className="text-2xl font-medium text-slate-900 tracking-tight">
                     Submit an Inquiry

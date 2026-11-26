@@ -1,7 +1,6 @@
 import PageHeader from "../../components/layout/PageHeader";
 import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
-import Link from "next/link";
 import { Clock, CheckCircle, ArrowRight } from "../../components/icons";
 
 export const metadata = {
@@ -9,6 +8,12 @@ export const metadata = {
   description:
     "Master Industrial Automation, PLC, SCADA, BMS, CCTV, Embedded Systems, and AI through 100% hands-on hardware training and placement assistance at Technotiq.",
 };
+
+const BATCH_TIMINGS = [
+  { track: "Regular Weekday Intensive", days: "Monday to Friday", hours: "3 Hours / Day (Morning & Afternoon slots)", idealFor: "Diploma & Degree freshers seeking immediate industrial placement" },
+  { track: "Weekend Professional Cohort", days: "Saturday & Sunday", hours: "5 Hours / Day (Intensive lab practice)", idealFor: "Working engineers, plant technicians & supervisors upgrading skills" },
+  { track: "Corporate Customized Batch", days: "Flexible Scheduling", hours: "Tailored to plant shutdown & shift timings", idealFor: "Factory maintenance teams, panel fabrication units & facility engineers" },
+];
 
 const COURSES = [
   {
@@ -132,7 +137,7 @@ export default function CoursesPage() {
       />
 
       {/* Courses Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {COURSES.map((course, idx) => (
             <div
@@ -208,51 +213,32 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* Placement & Lab Methodology */}
-      <section className="py-20 bg-slate-900 text-white border-t border-slate-800 font-normal">
+      {/* Cohort Timings & Flexibility */}
+      <section className="py-20 bg-slate-50 border-t border-b border-slate-200 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-16">
-            <p className="text-xs font-normal tracking-wider text-[#27B2DD] uppercase mb-3">
-              The Technotiq Advantage
+          <div className="max-w-3xl mb-12">
+            <p className="text-xs font-normal tracking-widest text-[#27B2DD] uppercase mb-3">
+              Batch Flexibility
             </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-white leading-tight">
-              How we turn college graduates into field-ready commissioning engineers.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+              Cohort schedules designed for students and working professionals.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80">
-              <span className="text-xs font-mono text-[#8B5CF6] block mb-2 font-medium">
-                PHASE 01
-              </span>
-              <h3 className="text-lg font-medium text-white mb-2">Electrical & Hardware Baseline</h3>
-              <p className="text-sm text-slate-300 leading-relaxed font-normal">
-                Hands-on safety protocol, reading electrical schematics, multimeter debugging,
-                relay logic, and sensor wire terminations before writing a single line of code.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80">
-              <span className="text-xs font-mono text-[#27B2DD] block mb-2 font-medium">
-                PHASE 02
-              </span>
-              <h3 className="text-lg font-medium text-white mb-2">Controllers & Supervisory SCADA</h3>
-              <p className="text-sm text-slate-300 leading-relaxed font-normal">
-                Writing ladder logic, creating tags, configuring alarms, tuning VFDs, and
-                connecting multi-node networks over Modbus and Industrial Ethernet.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80">
-              <span className="text-xs font-mono text-[#60A5FA] block mb-2 font-medium">
-                PHASE 03
-              </span>
-              <h3 className="text-lg font-medium text-white mb-2">Capstone Rig & Placement Drives</h3>
-              <p className="text-sm text-slate-300 leading-relaxed font-normal">
-                Independently wiring, programming, and debugging a complete automated system,
-                followed by technical mock interviews and direct plant referrals.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {BATCH_TIMINGS.map((b, idx) => (
+              <div key={idx} className="p-8 rounded-3xl bg-white border border-slate-200 space-y-4">
+                <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider block">
+                  {b.days}
+                </span>
+                <h3 className="text-lg font-medium text-slate-900">{b.track}</h3>
+                <p className="text-sm text-slate-600 font-normal">{b.hours}</p>
+                <div className="pt-3 border-t border-slate-100 text-xs text-slate-500 font-normal">
+                  <span className="text-slate-700 block mb-0.5">Recommended For:</span>
+                  {b.idealFor}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -70,62 +70,59 @@ export default function ValueMatrix() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-50 border-t border-b border-slate-200">
+    <section className="py-12 sm:py-16 bg-slate-50 border-t border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-16">
-          <p className="text-xs font-normal tracking-wider text-[#6803F5] uppercase mb-3">
-            Integrated Engineering Matrix
-          </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+        <div className="max-w-3xl mb-8">
+          <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight leading-tight">
             Where physical machines meet modern cloud software.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          <p className="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
             Most organizations separate industrial controls from enterprise IT. Technotiq
             bridges both worlds: we speak ladder logic as fluently as TypeScript, connecting
             shop-floor sensors directly to executive analytics.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-8 border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className={`p-3 rounded-2xl ${pillar.bgColor} ${pillar.color}`}>
-                      <Icon className="w-6 h-6" />
+                  <div className="flex items-center gap-3.5 mb-4">
+                    <div className={`p-2.5 rounded-2xl ${pillar.bgColor} ${pillar.color}`}>
+                      <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium text-slate-900">{pillar.title}</h3>
+                      <h3 className="text-lg font-medium text-slate-900">{pillar.title}</h3>
                       <p className="text-xs text-slate-500 font-mono mt-0.5 font-normal">{pillar.subtitle}</p>
                     </div>
                   </div>
 
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 font-normal">
                     {pillar.description}
                   </p>
 
-                  <div className="space-y-2.5 pt-4 border-t border-slate-100 font-normal">
+                  <div className="space-y-2 pt-3 border-t border-slate-100 font-normal">
                     {pillar.items.map((item, itemIdx) => (
-                      <div key={itemIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#6803F5] mt-2 shrink-0" />
+                      <div key={itemIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#6803F5] mt-1.5 shrink-0" />
                         <span>{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-100">
+                <div className="pt-4 mt-5 border-t border-slate-100">
                   <Link
                     href={pillar.link}
-                    className="inline-flex items-center text-sm font-normal text-[#6803F5] hover:text-[#5502C7] transition-colors"
+                    className="inline-flex items-center text-xs sm:text-sm font-normal text-[#6803F5] hover:text-[#5502C7] transition-colors"
                   >
                     <span>View track details and project examples</span>
-                    <ArrowRight className="w-4 h-4 ml-1.5" />
+                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                   </Link>
                 </div>
               </div>

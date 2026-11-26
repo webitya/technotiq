@@ -1,7 +1,6 @@
 import PageHeader from "../../components/layout/PageHeader";
 import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
-import Link from "next/link";
 import { Cpu, Server, Code, Activity, ShieldCheck, CheckCircle, ArrowRight } from "../../components/icons";
 
 export const metadata = {
@@ -9,6 +8,15 @@ export const metadata = {
   description:
     "Explore Technotiq's engineering services: Turnkey PLC/SCADA Commissioning, BMS Automation, IP CCTV Security, Custom Software Development, AI Workflows & Digital Marketing.",
 };
+
+const PROTOCOLS = [
+  { standard: "IEC 61131-3", scope: "PLC Programming (Ladder, FBD, Structured Text, Instruction List, SFC)", status: "Full Compliance" },
+  { standard: "Modbus RTU / TCP", scope: "RS-485 serial communication, multi-drop sensor loops, energy meter polling", status: "Industrial Certified" },
+  { standard: "BACnet IP & MSTP", scope: "ANSI/ASHRAE Standard 135 building automation controllers and HVAC chillers", status: "Field Verified" },
+  { standard: "Profinet / OPC UA", scope: "Real-time industrial Ethernet, supervisory SCADA connectivity, and IoT gateways", status: "Deterministic" },
+  { standard: "IEEE 802.3af/at (PoE)", scope: "IP CCTV infrastructure, optical fiber media converters, PTZ camera budgets", status: "Gigabit Certified" },
+  { standard: "REST / MQTT / WebSockets", scope: "Enterprise cloud telemetry dashboards, real-time alert dispatch, and ERP APIs", status: "TLS Encrypted" },
+];
 
 const SERVICES = [
   {
@@ -132,7 +140,7 @@ export default function ServicesPage() {
       />
 
       {/* Services List */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {SERVICES.map((service, idx) => {
             const Icon = service.icon;
@@ -189,6 +197,44 @@ export default function ServicesPage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Protocols & Technical Standards Matrix */}
+      <section className="py-20 bg-slate-50 border-t border-b border-slate-200 font-normal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="text-xs font-normal tracking-widest text-[#6803F5] uppercase mb-3">
+              Interoperability Matrix
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+              Supported industrial communication standards & protocols.
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 font-normal">
+              We engineer zero vendor lock-in systems that integrate smoothly into your existing field architecture.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl bg-white border border-slate-200">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-slate-50 border-b border-slate-200 text-xs font-mono text-slate-500 uppercase">
+                <tr>
+                  <th className="px-6 py-4">Protocol / Standard</th>
+                  <th className="px-6 py-4">Engineering Scope & Application</th>
+                  <th className="px-6 py-4">Certification</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {PROTOCOLS.map((p, idx) => (
+                  <tr key={idx} className="hover:bg-purple-50/20 transition-colors">
+                    <td className="px-6 py-4 font-mono text-slate-900">{p.standard}</td>
+                    <td className="px-6 py-4 text-slate-600 font-normal">{p.scope}</td>
+                    <td className="px-6 py-4 text-xs font-mono text-[#6803F5]">{p.status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 

@@ -54,13 +54,6 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -89,15 +82,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full scroll-smooth antialiased">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
         <JsonLd schema={orgSchema} />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-slate-900 selection:bg-purple-100 selection:text-purple-900 font-sans">
+      <body className="min-h-full flex flex-col bg-white text-slate-800 selection:bg-purple-100 selection:text-purple-900 font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

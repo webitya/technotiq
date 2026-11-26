@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Button from "../ui/Button";
-import { ArrowRight, Phone, Mail, Menu, X } from "../icons";
+import { ArrowRight, Menu, X } from "../icons";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -20,37 +20,10 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
-      {/* Top micro-bar for quick phone/email contact */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 hidden md:block">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <p className="font-normal tracking-tight text-slate-400">
-            Industrial Automation • Enterprise IT Solutions • Advanced Technical Training
-          </p>
-          <div className="flex items-center space-x-6 font-normal">
-            <a
-              href="tel:+916299916713"
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#27B2DD]" />
-              <span>+91 6299 916713</span>
-            </a>
-            <span className="text-slate-600">|</span>
-            <a
-              href="mailto:technotiqautomation@gmail.com"
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 text-[#6803F5]" />
-              <span>technotiqautomation@gmail.com</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navbar */}
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100/90 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo on Left */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative h-11 w-44">
               <Image
@@ -64,18 +37,18 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          {/* Clean Pill Navigation in Center */}
+          <nav className="hidden md:flex items-center space-x-1 bg-slate-50/70 p-1 rounded-full border border-slate-200/50">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-4 py-2 text-sm rounded-full transition-colors ${
+                  className={`px-4 py-1.5 text-sm rounded-full transition-all duration-200 ${
                     isActive
-                      ? "text-[#6803F5] bg-purple-50/80 font-medium"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50 font-normal"
+                      ? "text-[#6803F5] bg-white shadow-xs font-medium"
+                      : "text-slate-600 hover:text-slate-900 font-normal hover:bg-white/50"
                   }`}
                 >
                   {link.name}
@@ -84,7 +57,7 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Action CTA */}
+          {/* Action CTA on Right - Matching Original Screenshot Pill */}
           <div className="hidden sm:flex items-center gap-4">
             <Button href="/contact" variant="primary" size="md">
               <span>Book a discovery call</span>
@@ -93,7 +66,7 @@ export default function Header() {
           </div>
 
           {/* Mobile hamburger button */}
-          <div className="flex lg:hidden">
+          <div className="flex md:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -108,7 +81,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 font-normal">
+        <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 font-normal shadow-lg">
           <nav className="flex flex-col space-y-1">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
@@ -117,7 +90,7 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-base transition-colors ${
+                  className={`px-4 py-2.5 rounded-xl text-base transition-colors ${
                     isActive
                       ? "text-[#6803F5] bg-purple-50 font-medium"
                       : "text-slate-700 hover:bg-slate-50 font-normal"
@@ -129,26 +102,18 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
-            <a
-              href="tel:+916299916713"
-              className="flex items-center gap-2 text-sm text-slate-600 px-3 py-1.5"
-            >
-              <Phone className="w-4 h-4 text-[#27B2DD]" />
-              <span>+91 6299 916713</span>
-            </a>
-            <a
-              href="mailto:technotiqautomation@gmail.com"
-              className="flex items-center gap-2 text-sm text-slate-600 px-3 py-1.5"
-            >
-              <Mail className="w-4 h-4 text-[#6803F5]" />
-              <span>technotiqautomation@gmail.com</span>
-            </a>
+          <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
+            <div className="text-xs text-slate-500 px-3 py-1">
+              <span>Direct: </span>
+              <a href="tel:+916299916713" className="text-[#6803F5] hover:underline">
+                +91 6299 916713
+              </a>
+            </div>
             <Button
               href="/contact"
               variant="primary"
               size="md"
-              className="w-full justify-center mt-2"
+              className="w-full justify-center mt-1"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span>Book a discovery call</span>
