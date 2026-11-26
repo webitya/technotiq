@@ -84,9 +84,6 @@ export default function CoursesInteractiveView() {
       <section className="py-10 sm:py-14 lg:py-16 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6 sm:mb-8">
-            <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider block mb-1">
-              Certification Track 01
-            </span>
             <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
               Industrial Automation Courses
             </h2>
@@ -112,9 +109,6 @@ export default function CoursesInteractiveView() {
       <section className="py-10 sm:py-14 lg:py-16 bg-purple-50/60 border-t border-b border-purple-100 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6 sm:mb-8">
-            <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider block mb-1">
-              Certification Track 02
-            </span>
             <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
               Building Management System (BMS) & Security
             </h2>
