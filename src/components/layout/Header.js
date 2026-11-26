@@ -205,23 +205,8 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Bottom Drawer Contact Details & CTA */}
-          <div className="pt-6 border-t border-slate-100 space-y-3.5 mt-6">
-            <div className="space-y-1.5 text-xs text-slate-500 font-normal">
-              <div className="flex items-center justify-between">
-                <span>Direct Support:</span>
-                <a href="tel:+916299916713" className="text-[#6803F5] hover:underline font-medium">
-                  +91 6299 916713
-                </a>
-              </div>
-              <div className="flex items-center justify-between">
-                <span>Inquiries:</span>
-                <a href="mailto:technotiqautomation@gmail.com" className="text-slate-700 hover:underline">
-                  Email Desk
-                </a>
-              </div>
-            </div>
-
+          {/* Bottom Drawer CTA */}
+          <div className="pt-5 border-t border-slate-100 mt-6">
             <Button
               href="/contact"
               variant="primary"
