@@ -144,9 +144,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800 text-xs text-slate-400 font-normal">
-                  <p>Building Skills. Delivering Solutions. Shaping the Future.</p>
-                </div>
+
               </div>
             </div>
           </div>

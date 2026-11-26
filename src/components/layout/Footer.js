@@ -4,12 +4,12 @@ import { Phone, Mail, MapPin, ArrowRight } from "../icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-white pt-12 pb-8 sm:pt-14 sm:pb-8 border-t border-slate-800">
+    <footer className="bg-gradient-to-b from-[#24064C] to-[#15022E] text-white pt-10 pb-6 sm:pt-12 sm:pb-6 border-t border-[#3E1077]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-slate-800/80">
-          {/* Brand Info & Vision */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="relative h-11 w-44 bg-white/5 rounded-lg p-1.5 backdrop-blur-sm border border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 pb-8 border-b border-purple-900/50">
+          {/* Brand Info */}
+          <div className="lg:col-span-2 space-y-3.5">
+            <div className="relative h-10 w-44 bg-white rounded-xl p-1.5 shadow-xs">
               <Image
                 src="/technotiq-logo.webp"
                 alt="Technotiq"
@@ -19,25 +19,24 @@ export default function Footer() {
               />
             </div>
 
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm font-normal">
+            <p className="text-purple-200/80 text-xs sm:text-sm leading-relaxed max-w-sm font-normal">
               Technotiq Automation Private Limited bridges real-world industrial hardware
-              engineering with cutting-edge software, cloud systems, and applied AI. We build
-              mission-critical automation and mentor the next generation of engineers.
+              engineering with cutting-edge software, cloud systems, and applied AI.
             </p>
 
-            <div className="space-y-2 pt-1 text-xs sm:text-sm text-slate-300 font-normal">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#27B2DD] shrink-0 mt-0.5" />
-                <span>Ranchi, Jharkhand, India — Serving industrial & enterprise clients nationwide</span>
+            <div className="space-y-1.5 pt-1 text-xs text-purple-200/90 font-normal">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#38BDF8] shrink-0" />
+                <span>Ranchi, Jharkhand, India</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#27B2DD] shrink-0" />
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#38BDF8] shrink-0" />
                 <a href="tel:+916299916713" className="hover:text-white transition-colors">
                   +91 6299 916713
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#6803F5] shrink-0" />
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-[#C084FC] shrink-0" />
                 <a href="mailto:technotiqautomation@gmail.com" className="hover:text-white transition-colors">
                   technotiqautomation@gmail.com
                 </a>
@@ -45,51 +44,51 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Industrial Automation & Core Tech */}
+          {/* Industrial Automation */}
           <div>
-            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3 sm:mb-4">
+            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3">
               Industrial Automation
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-400 font-normal">
+            <ul className="space-y-2 text-xs sm:text-sm text-purple-200/70 font-normal">
               <li>
                 <Link href="/courses#plc" className="hover:text-white transition-colors">
-                  PLC Programming & Commissioning
+                  PLC Programming
                 </Link>
               </li>
               <li>
                 <Link href="/courses#scada" className="hover:text-white transition-colors">
-                  SCADA & HMI Design
+                  SCADA & HMI Systems
                 </Link>
               </li>
               <li>
                 <Link href="/courses#bms" className="hover:text-white transition-colors">
-                  BMS & Building Automation
+                  BMS & Building Controls
                 </Link>
               </li>
               <li>
                 <Link href="/courses#cctv" className="hover:text-white transition-colors">
-                  IP CCTV & Security Surveillance
+                  IP CCTV Surveillance
                 </Link>
               </li>
               <li>
                 <Link href="/courses#embedded" className="hover:text-white transition-colors">
-                  Embedded Systems & IoT Gateways
+                  Embedded Systems & IoT
                 </Link>
               </li>
               <li>
-                <Link href="/courses" className="text-[#27B2DD] hover:underline font-normal inline-flex items-center gap-1 mt-1">
-                  Browse All 6 Training Tracks <ArrowRight className="w-3.5 h-3.5" />
+                <Link href="/courses" className="text-[#38BDF8] hover:underline font-normal inline-flex items-center gap-1 mt-0.5">
+                  View All Tracks <ArrowRight className="w-3 h-3" />
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* IT & Enterprise Services */}
+          {/* IT & Digital Solutions */}
           <div>
-            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3 sm:mb-4">
+            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3">
               IT & Digital Solutions
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-400 font-normal">
+            <ul className="space-y-2 text-xs sm:text-sm text-purple-200/70 font-normal">
               <li>
                 <Link href="/services#software" className="hover:text-white transition-colors">
                   Custom Software Development
@@ -97,7 +96,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/services#ai" className="hover:text-white transition-colors">
-                  AI Workflow & Process Automation
+                  AI Workflow Automation
                 </Link>
               </li>
               <li>
@@ -107,41 +106,46 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/services#marketing" className="hover:text-white transition-colors">
-                  Data-Driven Digital Marketing
+                  Data-Driven Marketing
                 </Link>
               </li>
               <li>
                 <Link href="/services#iot" className="hover:text-white transition-colors">
-                  Industrial Systems Integration
+                  Systems Integration
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-[#6803F5] hover:underline font-normal inline-flex items-center gap-1 mt-1">
-                  View Engineering Services <ArrowRight className="w-3.5 h-3.5" />
+                <Link href="/services" className="text-[#C084FC] hover:underline font-normal inline-flex items-center gap-1 mt-0.5">
+                  View Services <ArrowRight className="w-3 h-3" />
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Quick Links & Accreditations */}
+          {/* Company & Navigation */}
           <div>
-            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3 sm:mb-4">
-              Company & Learning
+            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3">
+              Company
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-400 font-normal">
+            <ul className="space-y-2 text-xs sm:text-sm text-purple-200/70 font-normal">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
                   About Technotiq
                 </Link>
               </li>
               <li>
-                <Link href="/about#methodology" className="hover:text-white transition-colors">
-                  Hardware Lab Infrastructure
+                <Link href="/courses" className="hover:text-white transition-colors">
+                  Training Academy
                 </Link>
               </li>
               <li>
-                <Link href="/courses#placements" className="hover:text-white transition-colors">
-                  Placement Support & Alumni
+                <Link href="/services" className="hover:text-white transition-colors">
+                  Engineering Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact Us
                 </Link>
               </li>
               <li>
@@ -149,17 +153,12 @@ export default function Footer() {
                   Schedule Lab Visit
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Corporate Training Inquiries
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Credits - Only Technotiq */}
-        <div className="pt-6 flex items-center justify-center text-xs text-slate-500 font-normal">
+        {/* Clean Bottom Credit - Only Technotiq */}
+        <div className="pt-5 flex items-center justify-center text-xs text-purple-300/70 font-normal">
           <p>Technotiq</p>
         </div>
       </div>
