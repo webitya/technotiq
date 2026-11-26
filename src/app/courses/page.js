@@ -1,5 +1,4 @@
 import PageHeader from "../../components/layout/PageHeader";
-import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
 import { Clock, CheckCircle, ArrowRight } from "../../components/icons";
 
@@ -235,8 +234,6 @@ export default function CoursesPage() {
           </div>
         </div>
       </section>
-
-      <ConsultationCta />
     </div>
   );
 }

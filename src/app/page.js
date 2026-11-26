@@ -2,7 +2,6 @@ import Hero from "../components/home/Hero";
 import InteractiveWorkbench from "../components/home/InteractiveWorkbench";
 import ValueMatrix from "../components/home/ValueMatrix";
 import RealCaseStudies from "../components/home/RealCaseStudies";
-import ConsultationCta from "../components/home/ConsultationCta";
 import FaqAccordion from "../components/ui/FaqAccordion";
 import Link from "next/link";
 import { Award, ShieldCheck, Cpu, ArrowRight } from "../components/icons";
@@ -141,9 +140,6 @@ export default function HomePage() {
           />
         </div>
       </section>
-
-      {/* 7. Consultation CTA */}
-      <ConsultationCta />
     </div>
   );
 }

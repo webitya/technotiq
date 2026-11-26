@@ -1,5 +1,4 @@
 import PageHeader from "../../components/layout/PageHeader";
-import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
 import { ArrowRight, MapPin } from "../../components/icons";
 
@@ -209,8 +208,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <ConsultationCta />
     </div>
   );
 }

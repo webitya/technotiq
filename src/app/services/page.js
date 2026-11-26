@@ -1,5 +1,4 @@
 import PageHeader from "../../components/layout/PageHeader";
-import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
 import { Cpu, Server, Code, Activity, ShieldCheck, CheckCircle, ArrowRight } from "../../components/icons";
 
@@ -259,8 +258,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      <ConsultationCta />
     </div>
   );
 }
