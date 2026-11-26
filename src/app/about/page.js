@@ -1,7 +1,7 @@
 import PageHeader from "../../components/layout/PageHeader";
 import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
-import { ArrowRight, MapPin, CheckCircle, ShieldCheck } from "../../components/icons";
+import { ArrowRight, MapPin } from "../../components/icons";
 
 export const metadata = {
   title: "About Us | Technotiq Automation Private Limited",
@@ -51,18 +51,15 @@ export default function AboutPage() {
         breadcrumbs={[{ name: "About" }]}
       />
 
-      {/* Origin Story & Vision */}
-      <section className="py-20 bg-white font-normal">
+      {/* Origin Story & Vision - Compact, No Heading Badge */}
+      <section className="py-12 sm:py-16 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <p className="text-xs font-normal tracking-widest text-[#6803F5] uppercase">
-                Our Foundation & Mission
-              </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-4">
+              <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight leading-tight">
                 Built by engineers who have spent thousands of hours on factory floors.
               </h2>
-              <div className="space-y-4 text-base text-slate-600 leading-relaxed font-normal">
+              <div className="space-y-3 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 <p>
                   Every year, thousands of students graduate with degrees in Electrical,
                   Electronics, Instrumentation, and Computer Science. Yet when they enter an
@@ -85,35 +82,35 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="pt-4 flex flex-wrap gap-4">
-                <Button href="/courses" variant="primary" size="md">
+              <div className="pt-2 flex flex-wrap gap-3">
+                <Button href="/courses" variant="primary" size="sm">
                   <span>Explore training programs</span>
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <ArrowRight className="w-3.5 h-3.5 ml-1" />
                 </Button>
-                <Button href="/contact" variant="secondary" size="md">
+                <Button href="/contact" variant="secondary" size="sm">
                   <span>Contact our directors</span>
                 </Button>
               </div>
             </div>
 
             <div className="lg:col-span-5">
-              <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl space-y-6 font-normal">
-                <h3 className="text-lg font-medium text-white tracking-tight border-b border-slate-800 pb-4">
+              <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-4 font-normal">
+                <h3 className="text-base font-medium text-white tracking-tight border-b border-slate-800 pb-3">
                   Organization Credentials
                 </h3>
 
-                <div className="space-y-4 text-sm text-slate-300 font-normal">
+                <div className="space-y-3 text-xs sm:text-sm text-slate-300 font-normal">
                   <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">
+                    <span className="text-xs font-mono text-slate-500 block">
                       Entity Name
                     </span>
-                    <span className="text-white font-normal text-base">
+                    <span className="text-white font-normal text-sm">
                       Technotiq Automation Private Limited
                     </span>
                   </div>
 
                   <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">
+                    <span className="text-xs font-mono text-slate-500 block">
                       Core Verticals
                     </span>
                     <span>
@@ -123,20 +120,20 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">
+                    <span className="text-xs font-mono text-slate-500 block">
                       Location
                     </span>
                     <span className="flex items-center gap-1.5 text-white">
-                      <MapPin className="w-4 h-4 text-[#27B2DD]" />
+                      <MapPin className="w-3.5 h-3.5 text-[#27B2DD]" />
                       Ranchi, Jharkhand, India
                     </span>
                   </div>
 
                   <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">
+                    <span className="text-xs font-mono text-slate-500 block">
                       Direct Support
                     </span>
-                    <div className="space-y-1 mt-1 font-mono text-xs">
+                    <div className="space-y-0.5 mt-0.5 font-mono text-xs">
                       <a href="tel:+916299916713" className="block text-[#27B2DD] hover:underline">
                         +91 6299 916713
                       </a>
@@ -147,7 +144,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800 text-xs text-slate-400 font-normal">
+                <div className="pt-3 border-t border-slate-800 text-xs text-slate-400 font-normal">
                   <p>Building Skills. Delivering Solutions. Shaping the Future.</p>
                 </div>
               </div>
@@ -156,33 +153,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Concrete Comparison: College vs Technotiq */}
-      <section className="py-20 bg-slate-50 border-t border-b border-slate-200 font-normal">
+      {/* Concrete Comparison - Compact, No Heading Badge */}
+      <section className="py-12 sm:py-16 bg-slate-50 border-t border-b border-slate-200 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14">
-            <p className="text-xs font-normal tracking-widest text-[#6803F5] uppercase mb-3">
-              The Training Reality
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+          <div className="max-w-3xl mb-8">
+            <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight leading-tight">
               Why traditional college coaching fails to produce plant-ready engineers.
             </h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {COMPARISONS.map((row, idx) => (
               <div
                 key={idx}
                 className="grid grid-cols-1 md:grid-cols-12 rounded-2xl bg-white border border-slate-200 overflow-hidden"
               >
-                <div className="md:col-span-3 p-5 sm:p-6 bg-slate-50/70 border-b md:border-b-0 md:border-r border-slate-200 flex items-center">
-                  <span className="text-sm font-medium text-slate-900">{row.topic}</span>
+                <div className="md:col-span-3 p-4 sm:p-5 bg-slate-50/70 border-b md:border-b-0 md:border-r border-slate-200 flex items-center">
+                  <span className="text-xs sm:text-sm font-medium text-slate-900">{row.topic}</span>
                 </div>
-                <div className="md:col-span-4 p-5 sm:p-6 text-sm text-slate-500 border-b md:border-b-0 md:border-r border-slate-200">
-                  <span className="text-xs font-mono uppercase text-red-500 block mb-1">Standard Academic Program</span>
+                <div className="md:col-span-4 p-4 sm:p-5 text-xs sm:text-sm text-slate-500 border-b md:border-b-0 md:border-r border-slate-200">
+                  <span className="text-xs font-mono text-red-500 block mb-0.5">Standard Academic Program</span>
                   {row.academic}
                 </div>
-                <div className="md:col-span-5 p-5 sm:p-6 text-sm text-slate-800 bg-purple-50/20">
-                  <span className="text-xs font-mono uppercase text-[#6803F5] block mb-1">Technotiq Engineering Standard</span>
+                <div className="md:col-span-5 p-4 sm:p-5 text-xs sm:text-sm text-slate-800 bg-purple-50/20">
+                  <span className="text-xs font-mono text-[#6803F5] block mb-0.5">Technotiq Engineering Standard</span>
                   {row.technotiq}
                 </div>
               </div>
@@ -191,28 +185,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Concrete Lab Equipment Manifest */}
-      <section className="py-20 bg-white font-normal">
+      {/* Concrete Lab Equipment Manifest - Compact, No Heading Badge */}
+      <section className="py-12 sm:py-16 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <p className="text-xs font-normal tracking-widest text-[#27B2DD] uppercase mb-3">
-              Verifiable Laboratory Asset List
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+          <div className="max-w-3xl mb-8">
+            <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight leading-tight">
               Hardware inventory installed in our Ranchi training lab.
             </h2>
-            <p className="mt-3 text-sm text-slate-600 font-normal">
+            <p className="mt-2 text-xs sm:text-sm text-slate-600 font-normal">
               We welcome prospective trainees and plant managers to inspect any of these active test benches during our open lab hours.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {LAB_MANIFEST.map((item, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                <span className="text-xs font-mono text-[#6803F5] uppercase tracking-wider block">
+              <div key={idx} className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                <span className="text-xs font-mono text-[#6803F5] block">
                   {item.category}
                 </span>
-                <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
                   {item.items}
                 </p>
               </div>

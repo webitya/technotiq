@@ -136,19 +136,19 @@ export default function CoursesPage() {
         breadcrumbs={[{ name: "Courses" }]}
       />
 
-      {/* Courses Grid */}
-      <section className="py-20 bg-white font-normal">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      {/* Courses Grid - Compact, No Heading Badge */}
+      <section className="py-12 sm:py-16 bg-white font-normal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {COURSES.map((course, idx) => (
             <div
               key={course.id}
               id={course.id}
-              className="scroll-mt-28 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm hover:border-purple-200 transition-all font-normal"
+              className="scroll-mt-24 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-xs hover:border-purple-200 transition-all font-normal"
             >
-              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
-                <div className="lg:max-w-md space-y-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider">
+              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+                <div className="lg:max-w-md space-y-3">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-xs font-mono font-medium text-[#6803F5]">
                       Track 0{idx + 1}
                     </span>
                     <span className="text-xs text-slate-400 font-mono">•</span>
@@ -158,15 +158,15 @@ export default function CoursesPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight">
+                  <h2 className="text-xl sm:text-2xl font-medium text-slate-900 tracking-tight">
                     {course.title}
                   </h2>
 
-                  <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
                     {course.overview}
                   </p>
 
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200/80 space-y-2 text-xs font-normal">
+                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200/80 space-y-1.5 text-xs font-normal">
                     <div>
                       <span className="text-slate-500 block">Hardware Rigs:</span>
                       <span className="text-slate-800 font-normal">{course.hardware}</span>
@@ -177,7 +177,7 @@ export default function CoursesPage() {
                     </div>
                   </div>
 
-                  <div className="pt-2">
+                  <div className="pt-1">
                     <Button href="/contact" variant="primary" size="sm">
                       <span>Enroll in upcoming batch</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -185,14 +185,14 @@ export default function CoursesPage() {
                   </div>
                 </div>
 
-                <div className="lg:flex-1 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 space-y-6">
+                <div className="lg:flex-1 bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 space-y-4">
                   <div>
-                    <h3 className="text-sm font-medium uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
+                    <h3 className="text-xs sm:text-sm font-medium uppercase tracking-wider text-slate-900 mb-3 pb-2 border-b border-slate-100">
                       Curriculum Syllabus Modules
                     </h3>
-                    <ul className="space-y-3 font-normal">
+                    <ul className="space-y-2 font-normal">
                       {course.modules.map((mod, modIdx) => (
-                        <li key={modIdx} className="flex items-start gap-3 text-sm text-slate-700">
+                        <li key={modIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                           <CheckCircle className="w-4 h-4 text-[#6803F5] shrink-0 mt-0.5" />
                           <span>{mod}</span>
                         </li>
@@ -200,8 +200,8 @@ export default function CoursesPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-purple-50/60 border border-purple-100 text-xs sm:text-sm text-slate-800 font-normal">
-                    <span className="font-medium text-[#6803F5] block mb-1">
+                  <div className="p-3.5 rounded-xl bg-purple-50/60 border border-purple-100 text-xs text-slate-800 font-normal">
+                    <span className="font-medium text-[#6803F5] block mb-0.5">
                       Capstone Project:
                     </span>
                     <p>{course.capstone}</p>
@@ -213,27 +213,24 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* Cohort Timings & Flexibility */}
-      <section className="py-20 bg-slate-50 border-t border-b border-slate-200 font-normal">
+      {/* Cohort Timings & Flexibility - Compact, No Heading Badge */}
+      <section className="py-12 sm:py-16 bg-slate-50 border-t border-b border-slate-200 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <p className="text-xs font-normal tracking-widest text-[#27B2DD] uppercase mb-3">
-              Batch Flexibility
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+          <div className="max-w-3xl mb-8">
+            <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight leading-tight">
               Cohort schedules designed for students and working professionals.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {BATCH_TIMINGS.map((b, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-white border border-slate-200 space-y-4">
-                <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider block">
+              <div key={idx} className="p-6 rounded-3xl bg-white border border-slate-200 space-y-3">
+                <span className="text-xs font-mono font-medium text-[#6803F5] block">
                   {b.days}
                 </span>
-                <h3 className="text-lg font-medium text-slate-900">{b.track}</h3>
-                <p className="text-sm text-slate-600 font-normal">{b.hours}</p>
-                <div className="pt-3 border-t border-slate-100 text-xs text-slate-500 font-normal">
+                <h3 className="text-base font-medium text-slate-900">{b.track}</h3>
+                <p className="text-xs sm:text-sm text-slate-600 font-normal">{b.hours}</p>
+                <div className="pt-2.5 border-t border-slate-100 text-xs text-slate-500 font-normal">
                   <span className="text-slate-700 block mb-0.5">Recommended For:</span>
                   {b.idealFor}
                 </div>

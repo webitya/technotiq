@@ -139,40 +139,40 @@ export default function ServicesPage() {
         breadcrumbs={[{ name: "Services" }]}
       />
 
-      {/* Services List */}
-      <section className="py-20 bg-white font-normal">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      {/* Services List - Compact, No Heading Badge */}
+      <section className="py-12 sm:py-16 bg-white font-normal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {SERVICES.map((service, idx) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.id}
                 id={service.id}
-                className="scroll-mt-28 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm hover:border-slate-300 transition-all font-normal"
+                className="scroll-mt-24 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-xs hover:border-slate-300 transition-all font-normal"
               >
-                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
-                  <div className="lg:max-w-md space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-3 rounded-2xl ${service.bgColor} ${service.color}`}>
-                        <Icon className="w-6 h-6" />
+                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+                  <div className="lg:max-w-md space-y-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`p-2 rounded-2xl ${service.bgColor} ${service.color}`}>
+                        <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-mono font-normal text-slate-500 uppercase tracking-wider">
+                      <span className="text-xs font-mono font-normal text-slate-500">
                         Service 0{idx + 1}
                       </span>
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight">
+                    <h2 className="text-xl sm:text-2xl font-medium text-slate-900 tracking-tight">
                       {service.title}
                     </h2>
-                    <p className="text-xs font-mono text-[#6803F5] uppercase tracking-wide font-normal">
+                    <p className="text-xs font-mono text-[#6803F5] font-normal">
                       {service.subtitle}
                     </p>
 
-                    <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
                       {service.description}
                     </p>
 
-                    <div className="pt-2">
+                    <div className="pt-1">
                       <Button href="/contact" variant="primary" size="sm">
                         <span>Request quotation</span>
                         <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -180,13 +180,13 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  <div className="lg:flex-1 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200">
-                    <h3 className="text-sm font-medium uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
+                  <div className="lg:flex-1 bg-white rounded-2xl p-5 sm:p-6 border border-slate-200">
+                    <h3 className="text-xs sm:text-sm font-medium uppercase tracking-wider text-slate-900 mb-3 pb-2 border-b border-slate-100">
                       Standard Deliverables & Capabilities
                     </h3>
-                    <ul className="space-y-3 font-normal">
+                    <ul className="space-y-2.5 font-normal">
                       {service.deliverables.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex items-start gap-3 text-sm text-slate-700">
+                        <li key={itemIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                           <CheckCircle className="w-4 h-4 text-[#27B2DD] shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
@@ -200,36 +200,33 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Protocols & Technical Standards Matrix */}
-      <section className="py-20 bg-slate-50 border-t border-b border-slate-200 font-normal">
+      {/* Protocols & Technical Standards Matrix - Compact, No Heading Badge */}
+      <section className="py-12 sm:py-16 bg-slate-50 border-t border-b border-slate-200 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <p className="text-xs font-normal tracking-widest text-[#6803F5] uppercase mb-3">
-              Interoperability Matrix
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+          <div className="max-w-3xl mb-8">
+            <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight leading-tight">
               Supported industrial communication standards & protocols.
             </h2>
-            <p className="mt-3 text-sm text-slate-600 font-normal">
+            <p className="mt-2 text-xs sm:text-sm text-slate-600 font-normal">
               We engineer zero vendor lock-in systems that integrate smoothly into your existing field architecture.
             </p>
           </div>
 
           <div className="overflow-x-auto rounded-2xl bg-white border border-slate-200">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-slate-50 border-b border-slate-200 text-xs font-mono text-slate-500 uppercase">
+            <table className="w-full text-left text-xs sm:text-sm">
+              <thead className="bg-slate-50 border-b border-slate-200 text-xs font-mono text-slate-500">
                 <tr>
-                  <th className="px-6 py-4">Protocol / Standard</th>
-                  <th className="px-6 py-4">Engineering Scope & Application</th>
-                  <th className="px-6 py-4">Certification</th>
+                  <th className="px-5 py-3">Protocol / Standard</th>
+                  <th className="px-5 py-3">Engineering Scope & Application</th>
+                  <th className="px-5 py-3">Certification</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {PROTOCOLS.map((p, idx) => (
                   <tr key={idx} className="hover:bg-purple-50/20 transition-colors">
-                    <td className="px-6 py-4 font-mono text-slate-900">{p.standard}</td>
-                    <td className="px-6 py-4 text-slate-600 font-normal">{p.scope}</td>
-                    <td className="px-6 py-4 text-xs font-mono text-[#6803F5]">{p.status}</td>
+                    <td className="px-5 py-3 font-mono text-slate-900">{p.standard}</td>
+                    <td className="px-5 py-3 text-slate-600 font-normal">{p.scope}</td>
+                    <td className="px-5 py-3 text-xs font-mono text-[#6803F5]">{p.status}</td>
                   </tr>
                 ))}
               </tbody>
@@ -238,29 +235,26 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Engineering Delivery Process */}
-      <section className="py-20 bg-slate-900 text-white border-t border-slate-800 font-normal">
+      {/* Engineering Delivery Process - Compact, No Heading Badge */}
+      <section className="py-12 sm:py-16 bg-slate-900 text-white border-t border-slate-800 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-16">
-            <p className="text-xs font-normal tracking-wider text-[#27B2DD] uppercase mb-3">
-              Delivery Methodology
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-white leading-tight">
+          <div className="max-w-3xl mb-8">
+            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-white leading-tight">
               A structured lifecycle designed for zero operational surprises.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {PROCESS_STEPS.map((step, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80 backdrop-blur-sm"
+                className="p-6 rounded-3xl bg-slate-800/80 border border-slate-700/80 backdrop-blur-sm"
               >
-                <span className="text-2xl font-mono font-medium text-[#8B5CF6] block mb-4">
+                <span className="text-xl font-mono font-medium text-[#8B5CF6] block mb-2">
                   {step.step}
                 </span>
-                <h3 className="text-lg font-medium text-white mb-2">{step.title}</h3>
-                <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                <h3 className="text-base font-medium text-white mb-1.5">{step.title}</h3>
+                <p className="text-xs text-slate-300 leading-relaxed font-normal">
                   {step.desc}
                 </p>
               </div>
