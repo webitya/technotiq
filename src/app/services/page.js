@@ -156,9 +156,6 @@ export default function ServicesPage() {
                       <div className={`p-2 rounded-2xl ${service.bgColor} ${service.color}`}>
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-mono font-normal text-slate-500">
-                        Service 0{idx + 1}
-                      </span>
                     </div>
 
                     <h2 className="text-xl sm:text-2xl font-medium text-slate-900 tracking-tight">

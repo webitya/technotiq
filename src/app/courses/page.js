@@ -147,11 +147,7 @@ export default function CoursesPage() {
             >
               <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
                 <div className="lg:max-w-md space-y-3">
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xs font-mono font-medium text-[#6803F5]">
-                      Track 0{idx + 1}
-                    </span>
-                    <span className="text-xs text-slate-400 font-mono">•</span>
+                  <div className="flex items-center gap-2">
                     <span className="text-xs font-mono text-slate-600 flex items-center gap-1 font-normal">
                       <Clock className="w-3.5 h-3.5 text-[#27B2DD]" />
                       {course.duration}
