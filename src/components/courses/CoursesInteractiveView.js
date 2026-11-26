@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CourseCard from "./CourseCard";
+import GeometricHeroVisual from "../home/GeometricHeroVisual";
 import { ALL_COURSES } from "../../data/coursesData";
 import { ArrowRight, CheckCircle, WhatsApp, Phone } from "../icons";
 
@@ -41,7 +42,7 @@ export default function CoursesInteractiveView() {
     name: "",
     phone: "",
     email: "",
-    batchSlot: "Regular Weekday Intensive (Mon-Fri)",
+    batchSlot: "Weekday (Mon-Fri)",
     message: "",
   });
   const [isHighlighted, setIsHighlighted] = useState(false);
@@ -163,256 +164,235 @@ export default function CoursesInteractiveView() {
         </div>
       </section>
 
-      {/* 4. Compact Course Enquiry Form Section */}
+      {/* 4. Compact Course Enquiry Section: Homepage Right Element on Left & Simple Form on Right */}
       <section
         id="course-enquiry-section"
-        className="py-12 sm:py-16 bg-purple-50/70 border-t border-purple-100 font-normal scroll-mt-20"
+        className="py-12 sm:py-16 bg-purple-50/50 border-t border-purple-100 font-normal scroll-mt-20 overflow-hidden"
       >
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6 sm:mb-8">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-purple-200 text-[#6803F5] text-xs font-mono font-medium shadow-2xs mb-2">
-              Course Admission Desk
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight leading-tight">
-              Enquire About a Training Program
-            </h2>
-            <p className="mt-2 text-xs sm:text-sm text-slate-600 max-w-xl mx-auto font-normal">
-              Clicking &ldquo;Enquiry&rdquo; on any course above automatically selects your chosen program below. Our mentors will share the syllabus and batch slots.
-            </p>
-          </div>
-
-          {/* Form Card with subtle pulse when triggered via card click */}
-          <div
-            className={`p-6 sm:p-8 rounded-3xl bg-white border transition-all duration-300 shadow-sm ${
-              isHighlighted
-                ? "border-[#6803F5] ring-4 ring-[#6803F5]/15 shadow-xl shadow-purple-500/10"
-                : "border-purple-100 hover:border-purple-200"
-            }`}
-          >
-            {/* Auto-selected course indicator pill */}
-            <div className="mb-5 p-3 rounded-2xl bg-purple-50/80 border border-purple-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6803F5] animate-pulse shrink-0" />
-                <span className="text-xs text-slate-600 font-normal">Inquiring for:</span>
-                <span className="text-xs sm:text-sm font-medium text-[#6803F5]">
-                  {selectedCourse}
-                </span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Column: Homepage Right Element (3D Geometric Visual) */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center text-center lg:text-left">
+              <div className="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none">
+                <GeometricHeroVisual />
               </div>
-              <span className="text-[11px] text-slate-500 font-normal">
-                Instant faculty response within 24h
-              </span>
             </div>
 
-            {submitted ? (
-              <div className="py-8 text-center space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#6803F5] text-white flex items-center justify-center mx-auto mb-2 shadow-xs">
-                  <CheckCircle className="w-6 h-6" />
+            {/* Right Column: Clean, Compact, Authentic Enquiry Form */}
+            <div className="lg:col-span-7">
+              <div
+                className={`bg-white p-5 sm:p-7 rounded-2xl border transition-all duration-300 shadow-xs ${
+                  isHighlighted
+                    ? "border-[#6803F5] ring-2 ring-[#6803F5]/20 shadow-md"
+                    : "border-slate-200"
+                }`}
+              >
+                <div className="mb-4">
+                  <h3 className="text-xl sm:text-2xl font-medium text-slate-900 tracking-tight">
+                    Course Enquiry
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-500 mt-1 font-normal">
+                    Fill in your details below and our faculty will share the syllabus and upcoming batch dates.
+                  </p>
                 </div>
-                <h3 className="text-lg sm:text-xl font-medium text-slate-900">
-                  Enquiry Submitted Successfully!
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed font-normal">
-                  Thank you, <strong className="text-slate-900">{formData.name || "Student"}</strong>. We have received your inquiry for <strong className="text-slate-900">{selectedCourse}</strong>. Our training counselor will reach you at <strong className="text-slate-900">{formData.phone}</strong> shortly.
-                </p>
-                <div className="pt-3">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({
-                        name: "",
-                        phone: "",
-                        email: "",
-                        batchSlot: "Regular Weekday Intensive (Mon-Fri)",
-                        message: "",
-                      });
-                    }}
-                    className="text-xs font-medium text-[#6803F5] hover:underline cursor-pointer"
+
+                {submitted ? (
+                  <div className="py-6 text-center space-y-2">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-2">
+                      <CheckCircle className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-base font-medium text-slate-900">Enquiry Received</h4>
+                    <p className="text-xs text-slate-600 max-w-sm mx-auto font-normal">
+                      Thanks {formData.name || ""}, our team will contact you at {formData.phone} regarding the {selectedCourse} course.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="text-xs text-[#6803F5] hover:underline pt-2 cursor-pointer font-normal"
+                    >
+                      Send another enquiry
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-3.5">
+                    {/* Selected Course Dropdown */}
+                    <div>
+                      <label
+                        htmlFor="course-select"
+                        className="block text-xs font-medium text-slate-700 mb-1"
+                      >
+                        Selected Course <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        id="course-select"
+                        value={selectedCourse}
+                        onChange={(e) => setSelectedCourse(e.target.value)}
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/70 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors cursor-pointer font-normal"
+                      >
+                        <optgroup label="Industrial Automation">
+                          {industrialCourses.map((c) => (
+                            <option key={c.id} value={c.title}>
+                              {c.title}
+                            </option>
+                          ))}
+                        </optgroup>
+                        <optgroup label="Building Management System (BMS)">
+                          {bmsCourses.map((c) => (
+                            <option key={c.id} value={c.title}>
+                              {c.title}
+                            </option>
+                          ))}
+                        </optgroup>
+                      </select>
+                    </div>
+
+                    {/* Full Name & Phone/WhatsApp */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label
+                          htmlFor="enquiry-name"
+                          className="block text-xs font-medium text-slate-700 mb-1"
+                        >
+                          Full Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="enquiry-name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          placeholder="Enter your Name"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/70 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="enquiry-phone"
+                          className="block text-xs font-medium text-slate-700 mb-1"
+                        >
+                          Phone / WhatsApp <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="tel"
+                          id="enquiry-phone"
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="Enter your Phone number"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/70 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Email & Preferred Batch Slot */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label
+                          htmlFor="enquiry-email"
+                          className="block text-xs font-medium text-slate-700 mb-1"
+                        >
+                          Email Address <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          id="enquiry-email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          placeholder="Enter your Email address"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/70 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="enquiry-batch"
+                          className="block text-xs font-medium text-slate-700 mb-1"
+                        >
+                          Preferred Batch
+                        </label>
+                        <select
+                          id="enquiry-batch"
+                          name="batchSlot"
+                          value={formData.batchSlot}
+                          onChange={handleInputChange}
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/70 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors cursor-pointer font-normal"
+                        >
+                          <option value="Weekday (Mon-Fri)">
+                            Weekday (Mon–Fri)
+                          </option>
+                          <option value="Weekend (Sat-Sun)">
+                            Weekend (Sat–Sun)
+                          </option>
+                          <option value="Flexible / Corporate">
+                            Flexible / Corporate
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Optional Message */}
+                    <div>
+                      <label
+                        htmlFor="enquiry-message"
+                        className="block text-xs font-medium text-slate-700 mb-1"
+                      >
+                        Message (optional)
+                      </label>
+                      <input
+                        type="text"
+                        id="enquiry-message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        placeholder="Any questions about batches, fees, or syllabus?"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/70 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
+                      />
+                    </div>
+
+                    {/* Submit Button */}
+                    <div className="pt-1">
+                      <button
+                        type="submit"
+                        disabled={submitting}
+                        className="w-full py-2.5 px-5 rounded-xl bg-[#6803F5] hover:bg-[#5502C7] text-white text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer disabled:opacity-70"
+                      >
+                        <span>
+                          {submitting ? "Submitting..." : "Send Course Enquiry"}
+                        </span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </form>
+                )}
+
+                {/* Direct WhatsApp / Call Helpline */}
+                <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs text-slate-500 font-normal">
+                  <a
+                    href={`https://wa.me/916299916713?text=${encodeURIComponent(
+                      `Hi Technotiq Team, I would like to enquire about the "${selectedCourse}" course.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-slate-600 hover:text-emerald-700 transition-colors"
                   >
-                    Submit another course enquiry
-                  </button>
+                    <WhatsApp className="w-3.5 h-3.5 text-[#25D366]" />
+                    <span>Or chat on WhatsApp: +91 6299 916713</span>
+                  </a>
+
+                  <a
+                    href="tel:+916299916713"
+                    className="inline-flex items-center gap-1 text-slate-500 hover:text-[#6803F5] transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-slate-400" />
+                    <span>Direct Desk: +91 6299 916713</span>
+                  </a>
                 </div>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {/* 1. Selected Course Dropdown */}
-                <div>
-                  <label
-                    htmlFor="course-select"
-                    className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1"
-                  >
-                    Select Program / Course <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="course-select"
-                    value={selectedCourse}
-                    onChange={(e) => setSelectedCourse(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal cursor-pointer"
-                  >
-                    <optgroup label="Industrial Automation Tracks">
-                      {industrialCourses.map((c) => (
-                        <option key={c.id} value={c.title}>
-                          {c.title}
-                        </option>
-                      ))}
-                    </optgroup>
-                    <optgroup label="Building Management System (BMS) Tracks">
-                      {bmsCourses.map((c) => (
-                        <option key={c.id} value={c.title}>
-                          {c.title}
-                        </option>
-                      ))}
-                    </optgroup>
-                  </select>
-                </div>
-
-                {/* 2. Full Name & Phone/WhatsApp */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <div>
-                    <label
-                      htmlFor="enquiry-name"
-                      className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1"
-                    >
-                      Full Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="enquiry-name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Enter your Name"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="enquiry-phone"
-                      className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1"
-                    >
-                      Phone / WhatsApp <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      id="enquiry-phone"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="Enter your Phone number"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
-                    />
-                  </div>
-                </div>
-
-                {/* 3. Email & Preferred Batch Slot */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <div>
-                    <label
-                      htmlFor="enquiry-email"
-                      className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1"
-                    >
-                      Email Address <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="enquiry-email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Enter your Email address"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="enquiry-batch"
-                      className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1"
-                    >
-                      Preferred Batch Slot
-                    </label>
-                    <select
-                      id="enquiry-batch"
-                      name="batchSlot"
-                      value={formData.batchSlot}
-                      onChange={handleInputChange}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal cursor-pointer"
-                    >
-                      <option value="Regular Weekday Intensive (Mon-Fri)">
-                        Regular Weekday Intensive (Mon-Fri)
-                      </option>
-                      <option value="Weekend Professional Cohort (Sat-Sun)">
-                        Weekend Professional Cohort (Sat-Sun)
-                      </option>
-                      <option value="Corporate / Custom Schedule">
-                        Corporate / Custom Schedule
-                      </option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* 4. Optional Message */}
-                <div>
-                  <label
-                    htmlFor="enquiry-message"
-                    className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1"
-                  >
-                    Questions or Notes (Optional)
-                  </label>
-                  <input
-                    type="text"
-                    id="enquiry-message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="e.g. Inquiring for lab slot, hostel accommodation, or syllabus"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="w-full py-3 px-6 rounded-xl bg-[#6803F5] hover:bg-[#5502C7] text-white text-xs sm:text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2 shadow-xs cursor-pointer disabled:opacity-70 group"
-                  >
-                    <span>
-                      {submitting
-                        ? "Submitting Course Enquiry..."
-                        : `Submit Enquiry for ${selectedCourse}`}
-                    </span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </form>
-            )}
-
-            {/* Direct Quick WhatsApp / Call Alternative */}
-            <div className="mt-6 pt-5 border-t border-purple-50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-              <a
-                href={`https://wa.me/916299916713?text=${encodeURIComponent(
-                  `Hi Technotiq Team, I would like to enquire about the "${selectedCourse}" course.`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors font-medium"
-              >
-                <WhatsApp className="w-4 h-4 text-[#25D366]" />
-                <span>Quick WhatsApp: +91 6299 916713</span>
-              </a>
-
-              <a
-                href="tel:+916299916713"
-                className="inline-flex items-center gap-1.5 text-slate-600 hover:text-[#6803F5] font-normal transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-slate-400" />
-                <span>Direct Counselor Desk: +91 6299 916713</span>
-              </a>
             </div>
           </div>
         </div>
