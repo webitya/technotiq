@@ -4,7 +4,7 @@ import { ArrowRight } from "../icons";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-6 pb-12 lg:pt-10 lg:pb-16 hero-scene-bg subtle-blueprint-grid">
+    <section className="relative overflow-hidden pt-3 pb-10 sm:pt-4 sm:pb-12 lg:pt-5 lg:pb-14 hero-scene-bg subtle-blueprint-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
           {/* Main Hero Copy - Clean, Direct, No Extraneous Text */}

@@ -1,6 +1,6 @@
 export default function GeometricHeroVisual() {
   return (
-    <div className="relative w-full h-[440px] sm:h-[500px] lg:h-[560px] flex items-center justify-center select-none pointer-events-none">
+    <div className="relative w-full h-[380px] sm:h-[440px] lg:h-[480px] flex items-center justify-center select-none pointer-events-none">
       {/* Ambient background soft light spheres */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-gradient-to-tr from-[#6803F5]/15 via-[#9333EA]/10 to-[#27B2DD]/10 rounded-full blur-3xl" />
       <div className="absolute top-1/4 right-1/4 w-[240px] h-[240px] bg-[#E7E2FF]/80 rounded-full blur-2xl" />
