@@ -173,7 +173,7 @@ export default function CoursesPage() {
                   </div>
 
                   <div className="pt-1">
-                    <Button href="/contact" variant="primary" size="sm">
+                    <Button href="/contact" variant="primary" size="sm" className="w-full sm:w-auto justify-center">
                       <span>Enroll in upcoming batch</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1" />
                     </Button>

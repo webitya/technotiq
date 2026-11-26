@@ -81,12 +81,12 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-wrap gap-3">
-                <Button href="/courses" variant="primary" size="sm">
+              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                <Button href="/courses" variant="primary" size="sm" className="w-full sm:w-auto justify-center">
                   <span>Explore training programs</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1" />
                 </Button>
-                <Button href="/contact" variant="secondary" size="sm">
+                <Button href="/contact" variant="secondary" size="sm" className="w-full sm:w-auto justify-center">
                   <span>Contact our directors</span>
                 </Button>
               </div>

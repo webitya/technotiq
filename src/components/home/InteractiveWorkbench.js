@@ -114,8 +114,8 @@ export default function InteractiveWorkbench() {
           </p>
         </div>
 
-        {/* Tab Selector Buttons - Clean Names, No Numbers */}
-        <div className="flex flex-wrap gap-1.5 mb-6 p-1 rounded-2xl bg-slate-50 border border-slate-200/80">
+        {/* Tab Selector Buttons - Responsive horizontal swipe on mobile, wrap on tablet/desktop */}
+        <div className="flex gap-1.5 mb-6 p-1 rounded-2xl bg-slate-50 border border-slate-200/80 overflow-x-auto sm:flex-wrap">
           {WORKBENCHES.map((item, idx) => {
             const isSelected = activeTab === idx;
             return (
@@ -123,10 +123,10 @@ export default function InteractiveWorkbench() {
                 key={item.id}
                 type="button"
                 onClick={() => setActiveTab(idx)}
-                className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all duration-200 cursor-pointer font-normal text-left ${
+                className={`whitespace-nowrap px-3 sm:px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all duration-200 cursor-pointer font-normal text-left shrink-0 sm:shrink ${
                   isSelected
-                    ? "bg-white text-slate-900 shadow-xs border border-slate-200/80"
-                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/50"
+                    ? "bg-white text-slate-900 shadow-xs border border-slate-200/80 font-medium"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
                 }`}
               >
                 {item.name}
@@ -136,22 +136,22 @@ export default function InteractiveWorkbench() {
         </div>
 
         {/* Active Workbench Detail Console */}
-        <div className="rounded-3xl bg-slate-50 border border-slate-200 p-6 sm:p-8 transition-all duration-300">
-          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-slate-200/80">
+        <div className="rounded-3xl bg-slate-50 border border-slate-200 p-4 sm:p-6 lg:p-8 transition-all duration-300">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-6 pb-5 sm:pb-6 border-b border-slate-200/80">
             <div className="space-y-1.5 max-w-xl">
               <span className="text-xs font-mono text-[#6803F5] block">
                 {bench.tagline}
               </span>
-              <h3 className="text-xl sm:text-2xl font-medium text-slate-900">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-slate-900">
                 {bench.name}
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 {bench.description}
               </p>
             </div>
 
-            <div className="shrink-0 flex items-center gap-3">
-              <Button href="/contact" variant="primary" size="sm">
+            <div className="shrink-0 flex items-center">
+              <Button href="/contact" variant="primary" size="sm" className="w-full sm:w-auto justify-center">
                 <span>Book hands-on lab slot</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1" />
               </Button>

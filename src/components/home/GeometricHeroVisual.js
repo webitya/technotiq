@@ -1,14 +1,15 @@
 export default function GeometricHeroVisual() {
   return (
-    <div className="relative w-full h-[380px] sm:h-[440px] lg:h-[480px] flex items-center justify-center select-none pointer-events-none">
+    <div className="relative w-full max-w-full h-[280px] sm:h-[380px] lg:h-[460px] flex items-center justify-center select-none pointer-events-none overflow-hidden">
       {/* Ambient background soft light spheres */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-gradient-to-tr from-[#6803F5]/15 via-[#9333EA]/10 to-[#27B2DD]/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/4 right-1/4 w-[240px] h-[240px] bg-[#E7E2FF]/80 rounded-full blur-2xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[360px] h-[260px] sm:h-[360px] bg-gradient-to-tr from-[#6803F5]/15 via-[#9333EA]/10 to-[#27B2DD]/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-1/4 w-[160px] sm:w-[220px] h-[160px] sm:h-[220px] bg-[#E7E2FF]/80 rounded-full blur-2xl" />
 
-      {/* Main SVG Composition reproducing the 3D Geometric Blocks & Neon Ray - Clean with NO random text */}
+      {/* Main SVG Composition reproducing the 3D Geometric Blocks & Neon Ray */}
       <svg
-        className="relative z-10 w-full h-full max-w-[540px] drop-shadow-2xl"
+        className="relative z-10 w-full h-full max-w-[320px] sm:max-w-[440px] lg:max-w-[520px] drop-shadow-2xl"
         viewBox="0 0 600 550"
+        preserveAspectRatio="xMidYMid meet"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
