@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-[#4C05A6] text-white pt-10 pb-6 sm:pt-12 sm:pb-6 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 pb-8 border-b border-white/15">
-          {/* Brand Info */}
+          {/* Brand Info (2 columns) */}
           <div className="lg:col-span-2 space-y-3.5">
             <div className="relative h-10 w-44 bg-white rounded-xl p-1.5 shadow-xs">
               <Image
@@ -38,49 +38,78 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Industrial Automation */}
+          {/* Industrial Automation Courses (1 column) */}
           <div>
             <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3">
               Industrial Automation
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-white font-normal">
               <li>
-                <Link href="/courses#plc" className="text-white hover:underline transition-colors">
-                  PLC Programming
+                <Link href="/courses/automation-system-engineer" className="text-white hover:underline transition-colors">
+                  Automation System Engineer
                 </Link>
               </li>
               <li>
-                <Link href="/courses#scada" className="text-white hover:underline transition-colors">
-                  SCADA & HMI Systems
+                <Link href="/courses/advanced-automation-system-professional" className="text-white hover:underline transition-colors">
+                  Advanced Automation System
                 </Link>
               </li>
               <li>
-                <Link href="/courses#bms" className="text-white hover:underline transition-colors">
-                  BMS & Building Controls
+                <Link href="/courses/advanced-plc-program-professional" className="text-white hover:underline transition-colors">
+                  Advanced PLC Program
                 </Link>
               </li>
               <li>
-                <Link href="/courses#cctv" className="text-white hover:underline transition-colors">
-                  IP CCTV Surveillance
+                <Link href="/courses/electrical-control-panel-designing" className="text-white hover:underline transition-colors">
+                  Electrical Panel Designing
                 </Link>
               </li>
               <li>
-                <Link href="/courses#embedded" className="text-white hover:underline transition-colors">
-                  Embedded Systems & IoT
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses" className="text-white hover:underline font-normal inline-block mt-0.5">
-                  View All Tracks
+                <Link href="/courses/industrial-automation" className="text-white hover:underline font-normal inline-block mt-0.5 opacity-90">
+                  View Category Tracks
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* IT & Digital Solutions */}
+          {/* Building Management System Courses (1 column) */}
           <div>
             <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3">
-              IT & Digital Solutions
+              Building Management System
+            </h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-white font-normal">
+              <li>
+                <Link href="/courses/diploma-in-building-management-system" className="text-white hover:underline transition-colors">
+                  Diploma In BMS
+                </Link>
+              </li>
+              <li>
+                <Link href="/courses/certified-bms-engineer" className="text-white hover:underline transition-colors">
+                  Certified BMS Engineer
+                </Link>
+              </li>
+              <li>
+                <Link href="/courses/cctv-and-security-systems" className="text-white hover:underline transition-colors">
+                  CCTV & Security Systems
+                </Link>
+              </li>
+              <li>
+                <Link href="/courses/cctv-training" className="text-white hover:underline transition-colors">
+                  CCTV Training
+                </Link>
+              </li>
+              <li>
+                <Link href="/courses/building-management-system" className="text-white hover:underline font-normal inline-block mt-0.5 opacity-90">
+                  View Category Tracks
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company & Services (1 column) */}
+          <div>
+            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3">
+              Company & Services
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-white font-normal">
               <li>
@@ -94,57 +123,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services#web" className="text-white hover:underline transition-colors">
-                  Web & Mobile Engineering
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#marketing" className="text-white hover:underline transition-colors">
-                  Data-Driven Marketing
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#iot" className="text-white hover:underline transition-colors">
-                  Systems Integration
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-white hover:underline font-normal inline-block mt-0.5">
-                  View Services
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company & Navigation */}
-          <div>
-            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3">
-              Company
-            </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-white font-normal">
-              <li>
                 <Link href="/about" className="text-white hover:underline transition-colors">
                   About Technotiq
                 </Link>
               </li>
               <li>
                 <Link href="/courses" className="text-white hover:underline transition-colors">
-                  Training Academy
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-white hover:underline transition-colors">
-                  Engineering Services
+                  All Courses Catalog
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-white hover:underline transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-white hover:underline transition-colors">
-                  Schedule Lab Visit
+                  Contact & Lab Visit
                 </Link>
               </li>
             </ul>
