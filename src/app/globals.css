@@ -39,7 +39,7 @@
 }
 
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
 }
 
@@ -49,7 +49,7 @@ body {
   background-color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Headings: Clean, modern, understated font weight (not heavy bold) */
