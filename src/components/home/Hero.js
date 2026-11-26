@@ -36,7 +36,7 @@ export default function Hero() {
               </Button>
 
               <Button href="/courses" variant="secondary" size="md" className="w-full sm:w-auto justify-center">
-                <span>View automation examples</span>
+                <span>Our courses</span>
               </Button>
             </div>
 
