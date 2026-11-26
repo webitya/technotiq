@@ -29,26 +29,26 @@ export default function ContactForm() {
     setTimeout(() => {
       setSubmitting(false);
       setSubmitted(true);
-    }, 600);
+    }, 500);
   };
 
   if (submitted) {
     return (
-      <div className="p-8 sm:p-10 rounded-3xl bg-purple-50/60 border border-purple-200 text-slate-900 space-y-4 text-center">
-        <div className="w-14 h-14 rounded-full bg-[#6803F5] text-white flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-8 h-8" />
+      <div className="p-6 sm:p-8 rounded-2xl bg-purple-50/60 border border-purple-200 text-slate-900 space-y-3 text-center">
+        <div className="w-12 h-12 rounded-full bg-[#6803F5] text-white flex items-center justify-center mx-auto mb-2">
+          <CheckCircle className="w-6 h-6" />
         </div>
-        <h3 className="text-2xl font-medium text-slate-900">Inquiry Received Successfully</h3>
-        <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed font-normal">
+        <h3 className="text-lg sm:text-xl font-medium text-slate-900">Inquiry Received Successfully</h3>
+        <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed font-normal">
           Thank you, {formData.name}. A senior technical advisor from Technotiq
           Automation will review your details and contact you at {formData.phone}{" "}
           within 24 business hours.
         </p>
-        <div className="pt-4">
+        <div className="pt-2">
           <button
             type="button"
             onClick={() => setSubmitted(false)}
-            className="text-xs font-normal text-[#6803F5] hover:underline"
+            className="text-xs font-normal text-[#6803F5] hover:underline cursor-pointer"
           >
             Submit another inquiry
           </button>
@@ -58,9 +58,9 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
       <div>
-        <label htmlFor="name" className="block text-xs font-normal uppercase tracking-wider text-slate-600 mb-2">
+        <label htmlFor="name" className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1">
           Full Name <span className="text-red-500">*</span>
         </label>
         <input
@@ -70,14 +70,14 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          placeholder="e.g. Rahul Sharma"
-          className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal"
+          placeholder="Enter your Name"
+          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
         />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
         <div>
-          <label htmlFor="phone" className="block text-xs font-normal uppercase tracking-wider text-slate-600 mb-2">
+          <label htmlFor="phone" className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1">
             Phone / WhatsApp <span className="text-red-500">*</span>
           </label>
           <input
@@ -87,13 +87,13 @@ export default function ContactForm() {
             required
             value={formData.phone}
             onChange={handleChange}
-            placeholder="+91 98765 43210"
-            className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal"
+            placeholder="Enter your Phone number"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-xs font-normal uppercase tracking-wider text-slate-600 mb-2">
+          <label htmlFor="email" className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1">
             Email Address <span className="text-red-500">*</span>
           </label>
           <input
@@ -103,22 +103,22 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            placeholder="rahul@example.com"
-            className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal"
+            placeholder="Enter your Email address"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="serviceInterest" className="block text-xs font-normal uppercase tracking-wider text-slate-600 mb-2">
-          Primary Area of Interest <span className="text-red-500">*</span>
+        <label htmlFor="serviceInterest" className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1">
+          Area of Interest <span className="text-red-500">*</span>
         </label>
         <select
           id="serviceInterest"
           name="serviceInterest"
           value={formData.serviceInterest}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal"
+          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal cursor-pointer"
         >
           <option value="Industrial Automation (PLC / SCADA)">Industrial Automation (PLC / SCADA)</option>
           <option value="BMS & Building Automation">BMS & Building Automation</option>
@@ -132,33 +132,33 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-xs font-normal uppercase tracking-wider text-slate-600 mb-2">
-          Your Project Scope or Training Inquiry
+        <label htmlFor="message" className="block text-[11px] font-medium tracking-wide text-slate-600 mb-1">
+          Your Project Scope or Inquiry
         </label>
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={3}
           value={formData.message}
           onChange={handleChange}
-          placeholder="Describe your plant requirements, technical questions, or batch preferences..."
-          className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal"
+          placeholder="Enter your Message or requirements..."
+          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-[#6803F5] focus:bg-white transition-colors font-normal placeholder:text-slate-400 resize-none"
         />
       </div>
 
       <Button
         type="submit"
         variant="primary"
-        size="lg"
+        size="md"
         disabled={submitting}
-        className="w-full justify-center !rounded-full"
+        className="w-full justify-center !rounded-xl py-2.5 sm:py-3 cursor-pointer"
       >
-        <span>{submitting ? "Sending details..." : "Submit discovery inquiry"}</span>
-        <ArrowRight className="w-4 h-4 ml-1" />
+        <span>{submitting ? "Sending..." : "Submit Inquiry"}</span>
+        <ArrowRight className="w-4 h-4 ml-1.5" />
       </Button>
 
-      <p className="text-xs text-center text-slate-400 font-normal">
-        Your contact details remain confidential. No spam, only direct technical responses.
+      <p className="text-[11px] text-center text-slate-400 font-normal">
+        Your contact details remain confidential. Directly answered by engineers.
       </p>
     </form>
   );
