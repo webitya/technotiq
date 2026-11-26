@@ -85,7 +85,7 @@ export default function CoursesInteractiveView() {
       <section className="py-10 sm:py-14 lg:py-16 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#6803F5] leading-tight">
               Industrial Automation Courses
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-slate-600 font-normal max-w-2xl leading-relaxed">
@@ -110,7 +110,7 @@ export default function CoursesInteractiveView() {
       <section className="py-10 sm:py-14 lg:py-16 bg-purple-50/60 border-t border-b border-purple-100 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#6803F5] leading-tight">
               Building Management System (BMS) & Security
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-slate-600 font-normal max-w-2xl leading-relaxed">
@@ -188,7 +188,7 @@ export default function CoursesInteractiveView() {
                 }`}
               >
                 <div className="mb-4">
-                  <h3 className="text-xl sm:text-2xl font-medium text-slate-900 tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#6803F5] tracking-tight">
                     Course Enquiry
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 mt-1 font-normal">
