@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "../../../components/layout/PageHeader";
 import Button from "../../../components/ui/Button";
 import { ALL_COURSES } from "../../../data/coursesData";
@@ -39,6 +40,8 @@ export default async function CourseDetailPage({ params }) {
     notFound();
   }
 
+  const imageSrc = course.image || `/images/courses/${course.slug}.jpg`;
+
   return (
     <div>
       <PageHeader
@@ -56,7 +59,7 @@ export default async function CourseDetailPage({ params }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* Left Content Area: 8 Columns */}
             <div className="lg:col-span-8 space-y-10">
-              {/* Back to Catalog Link */}
+              {/* Back to Category Link */}
               <div>
                 <Link
                   href={`/courses/${course.category}`}
@@ -65,6 +68,18 @@ export default async function CourseDetailPage({ params }) {
                   <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
                   <span>Back to {course.categoryName} Courses</span>
                 </Link>
+              </div>
+
+              {/* Featured Course Image Banner */}
+              <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden border border-purple-100 shadow-md bg-purple-50">
+                <Image
+                  src={imageSrc}
+                  alt={course.title}
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 800px"
+                />
               </div>
 
               {/* Core Highlights */}
@@ -88,29 +103,25 @@ export default async function CourseDetailPage({ params }) {
                   Detailed Syllabus Curriculum
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-600 font-normal">
-                  Every module consists of classroom theory, circuit wiring, logic design, and physical validation on live hardware test benches.
+                  Every module combines electrical engineering theory with mandatory physical bench wiring and PLC debug time.
                 </p>
 
                 <div className="space-y-4 pt-2">
-                  {course.modules.map((mod, modIdx) => (
+                  {course.modules.map((m, idx) => (
                     <div
-                      key={modIdx}
-                      className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3"
+                      key={idx}
+                      className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-purple-200 transition-all space-y-3"
                     >
-                      <div className="flex items-center gap-2.5">
-                        <span className="w-6 h-6 rounded-full bg-[#6803F5] text-white flex items-center justify-center text-xs font-mono font-medium shrink-0">
-                          {modIdx + 1}
+                      <h3 className="text-base font-medium text-slate-900 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-purple-50 text-[#6803F5] text-xs flex items-center justify-center font-mono font-medium">
+                          {idx + 1}
                         </span>
-                        <h3 className="text-base font-medium text-slate-900">
-                          {mod.title}
-                        </h3>
-                      </div>
-
-                      <ul className="space-y-2 pl-8 border-l border-purple-200/60 ml-3">
-                        {mod.topics.map((topic, topicIdx) => (
-                          <li key={topicIdx} className="text-xs sm:text-sm text-slate-600 flex items-start gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#6803F5] mt-1.5 shrink-0" />
-                            <span>{topic}</span>
+                        <span>{m.title}</span>
+                      </h3>
+                      <ul className="space-y-2 pl-8 font-normal">
+                        {m.topics.map((t, tIdx) => (
+                          <li key={tIdx} className="text-xs sm:text-sm text-slate-600 list-disc">
+                            {t}
                           </li>
                         ))}
                       </ul>
@@ -119,108 +130,105 @@ export default async function CourseDetailPage({ params }) {
                 </div>
               </div>
 
-              {/* Hardware Rigs & Software Specifications */}
-              <div className="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
-                <div className="flex items-center gap-2.5">
-                  <Cpu className="w-5 h-5 text-[#27B2DD]" />
-                  <h2 className="text-lg font-medium text-slate-900">
-                    Hardware Equipment & Software Suite Installed
-                  </h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1">
-                    <span className="text-xs font-mono text-slate-400 block">Physical Hardware Rigs:</span>
-                    <p className="text-slate-800 font-normal">{course.hardware}</p>
+              {/* Capstone Project Card */}
+              {course.capstone && (
+                <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-purple-50/90 to-cyan-50/40 border border-purple-100 space-y-2">
+                  <div className="flex items-center gap-2 text-[#6803F5] text-xs font-mono font-medium">
+                    <Award className="w-4 h-4" />
+                    <span>MANDATORY INDUSTRY CAPSTONE PROJECT</span>
                   </div>
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1">
-                    <span className="text-xs font-mono text-slate-400 block">Software Platforms & Tools:</span>
-                    <p className="text-slate-800 font-normal">{course.software}</p>
-                  </div>
+                  <h3 className="text-lg font-medium text-slate-900">
+                    Production Commissioning Benchmark
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                    {course.capstone}
+                  </p>
                 </div>
-              </div>
-
-              {/* Practical Capstone Project */}
-              <div className="p-6 rounded-3xl bg-purple-50/80 border border-purple-100 space-y-2">
-                <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-[#6803F5]" />
-                  <h2 className="text-base sm:text-lg font-medium text-slate-900">
-                    Industry Capstone Engineering Project
-                  </h2>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                  {course.capstone}
-                </p>
-              </div>
+              )}
             </div>
 
-            {/* Right Sticky Sidebar: 4 Columns */}
+            {/* Right Sidebar: 4 Columns Sticky Enrollment Card */}
             <div className="lg:col-span-4">
-              <div className="sticky top-24 space-y-6">
-                {/* Course Metadata Card */}
-                <div className="p-6 rounded-3xl bg-white border border-purple-100 shadow-lg shadow-purple-500/5 space-y-5">
-                  <h3 className="text-lg font-medium text-slate-900 pb-3 border-b border-slate-100">
-                    Program Overview
-                  </h3>
+              <div className="sticky top-28 space-y-6">
+                <div className="bg-white rounded-3xl p-6 sm:p-7 border border-purple-100 shadow-xl shadow-purple-950/5 space-y-6">
+                  <div>
+                    <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider block mb-1">
+                      Program Credentials
+                    </span>
+                    <h3 className="text-xl font-medium text-slate-900 leading-snug">
+                      {course.title}
+                    </h3>
+                  </div>
 
-                  <div className="space-y-3.5 text-xs sm:text-sm font-normal">
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="text-slate-500">Duration:</span>
-                      <span className="text-slate-900 font-medium text-right">{course.duration}</span>
+                  <div className="space-y-3.5 pt-4 border-t border-slate-100 text-xs sm:text-sm font-normal">
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500 flex items-center gap-1.5">
+                        <Clock className="w-4 h-4 text-[#27B2DD]" />
+                        Duration
+                      </span>
+                      <span className="text-slate-900 font-medium">{course.duration}</span>
                     </div>
 
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="text-slate-500">Training Track:</span>
-                      <span className="text-slate-900 font-medium text-right">{course.categoryName}</span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500 flex items-center gap-1.5">
+                        <Cpu className="w-4 h-4 text-[#6803F5]" />
+                        Track Level
+                      </span>
+                      <span className="text-slate-900 font-medium">{course.level}</span>
                     </div>
 
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="text-slate-500">Level:</span>
-                      <span className="text-slate-900 font-medium text-right">{course.level}</span>
-                    </div>
-
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="text-slate-500">Practical Lab Time:</span>
-                      <span className="text-[#6803F5] font-medium text-right">80%+ Physical Hardware</span>
-                    </div>
-
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="text-slate-500">Placement Support:</span>
-                      <span className="text-emerald-700 font-medium text-right">100% Assistance</span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500 flex items-center gap-1.5">
+                        <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                        Certification
+                      </span>
+                      <span className="text-emerald-700 font-medium">Technotiq Certified</span>
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 space-y-2.5">
+                  {/* Hardware test bed */}
+                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1 font-normal">
+                    <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">
+                      Dedicated Hardware Rig
+                    </span>
+                    <p className="text-xs text-slate-700 leading-relaxed">
+                      {course.hardware}
+                    </p>
+                  </div>
+
+                  {/* Software toolchains */}
+                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1 font-normal">
+                    <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">
+                      Industry Software
+                    </span>
+                    <p className="text-xs text-slate-700 leading-relaxed">
+                      {course.software}
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 pt-2">
                     <Button
                       href="/contact"
                       variant="primary"
-                      size="md"
-                      className="w-full justify-center !rounded-full"
+                      size="lg"
+                      className="w-full justify-center !rounded-full shadow-md shadow-purple-600/20"
                     >
-                      <span>Enroll in upcoming cohort</span>
+                      <span>Enroll in Next Cohort</span>
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </Button>
 
                     <a
-                      href="https://wa.me/916299916713?text=Hi%20Technotiq%20Team%2C%20I%20am%20interested%20in%20enrolling%20in%20the%20"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-2.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-medium flex items-center justify-center hover:bg-emerald-100 transition-colors"
+                      href="tel:+916299916713"
+                      className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-full text-xs font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 transition-colors"
                     >
-                      <span>Chat on WhatsApp (+91 6299 916713)</span>
+                      <Phone className="w-3.5 h-3.5 text-[#6803F5]" />
+                      <span>Direct Desk: +91 6299 916713</span>
                     </a>
                   </div>
-                </div>
 
-                {/* Lab Walkthrough Guarantee */}
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-[#6803F5] shrink-0 mt-0.5" />
-                  <div className="text-xs text-slate-600 leading-relaxed font-normal">
-                    <span className="block text-slate-900 font-medium mb-0.5">
-                      Free In-Person Lab Inspection
-                    </span>
-                    You can visit our Ranchi engineering lab to inspect this exact hardware rack in person before enrolling.
-                  </div>
+                  <p className="text-[11px] text-center text-slate-400 font-normal">
+                    Flexible weekday and weekend batches available with 100% lab access.
+                  </p>
                 </div>
               </div>
             </div>
