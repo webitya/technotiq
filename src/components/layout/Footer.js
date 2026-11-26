@@ -3,43 +3,41 @@ import Image from "next/image";
 import { Phone, Mail, MapPin, ArrowRight } from "../icons";
 
 export default function Footer() {
-  const currentYear = 2026;
-
   return (
-    <footer className="bg-slate-950 text-white pt-20 pb-12 border-t border-slate-800">
+    <footer className="bg-slate-950 text-white pt-12 pb-8 sm:pt-14 sm:pb-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-slate-800/80">
           {/* Brand Info & Vision */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="relative h-12 w-48 bg-white/5 rounded-lg p-1.5 backdrop-blur-sm border border-white/10">
+          <div className="lg:col-span-2 space-y-4">
+            <div className="relative h-11 w-44 bg-white/5 rounded-lg p-1.5 backdrop-blur-sm border border-white/10">
               <Image
                 src="/technotiq-logo.webp"
-                alt="Technotiq Automation Private Limited"
+                alt="Technotiq"
                 fill
                 className="object-contain object-left px-2"
-                sizes="192px"
+                sizes="176px"
               />
             </div>
 
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm font-normal">
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm font-normal">
               Technotiq Automation Private Limited bridges real-world industrial hardware
               engineering with cutting-edge software, cloud systems, and applied AI. We build
               mission-critical automation and mentor the next generation of engineers.
             </p>
 
-            <div className="space-y-3 pt-2 text-sm text-slate-300 font-normal">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#27B2DD] shrink-0 mt-0.5" />
+            <div className="space-y-2 pt-1 text-xs sm:text-sm text-slate-300 font-normal">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#27B2DD] shrink-0 mt-0.5" />
                 <span>Ranchi, Jharkhand, India — Serving industrial & enterprise clients nationwide</span>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#27B2DD] shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#27B2DD] shrink-0" />
                 <a href="tel:+916299916713" className="hover:text-white transition-colors">
                   +91 6299 916713
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#6803F5] shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#6803F5] shrink-0" />
                 <a href="mailto:technotiqautomation@gmail.com" className="hover:text-white transition-colors">
                   technotiqautomation@gmail.com
                 </a>
@@ -49,10 +47,10 @@ export default function Footer() {
 
           {/* Industrial Automation & Core Tech */}
           <div>
-            <h4 className="text-white font-medium text-sm tracking-wide uppercase mb-5">
+            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3 sm:mb-4">
               Industrial Automation
             </h4>
-            <ul className="space-y-3 text-sm text-slate-400 font-normal">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-400 font-normal">
               <li>
                 <Link href="/courses#plc" className="hover:text-white transition-colors">
                   PLC Programming & Commissioning
@@ -88,10 +86,10 @@ export default function Footer() {
 
           {/* IT & Enterprise Services */}
           <div>
-            <h4 className="text-white font-medium text-sm tracking-wide uppercase mb-5">
+            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3 sm:mb-4">
               IT & Digital Solutions
             </h4>
-            <ul className="space-y-3 text-sm text-slate-400 font-normal">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-400 font-normal">
               <li>
                 <Link href="/services#software" className="hover:text-white transition-colors">
                   Custom Software Development
@@ -127,10 +125,10 @@ export default function Footer() {
 
           {/* Quick Links & Accreditations */}
           <div>
-            <h4 className="text-white font-medium text-sm tracking-wide uppercase mb-5">
+            <h4 className="text-white font-medium text-xs sm:text-sm tracking-wide uppercase mb-3 sm:mb-4">
               Company & Learning
             </h4>
-            <ul className="space-y-3 text-sm text-slate-400 font-normal">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-400 font-normal">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
                   About Technotiq
@@ -160,24 +158,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Credits & Taglines */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4 font-normal">
-          <div>
-            <p className="text-slate-400">
-              Building Skills. Delivering Solutions. Shaping the Future.
-            </p>
-            <p className="mt-1">
-              &copy; {currentYear} Technotiq Automation Private Limited. All rights reserved.
-            </p>
-          </div>
-
-          <div className="flex items-center space-x-6 text-slate-400">
-            <span>ISO Compliant Industrial Training</span>
-            <span>•</span>
-            <span>CIN / Reg. Entity</span>
-            <span>•</span>
-            <span>technotiq.in</span>
-          </div>
+        {/* Bottom Credits - Only Technotiq */}
+        <div className="pt-6 flex items-center justify-center text-xs text-slate-500 font-normal">
+          <p>Technotiq</p>
         </div>
       </div>
     </footer>

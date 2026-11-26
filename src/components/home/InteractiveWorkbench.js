@@ -2,15 +2,13 @@
 
 import { useState } from "react";
 import Button from "../ui/Button";
-import { Cpu, Monitor, Activity, ShieldCheck, Server, Code, CheckCircle, ArrowRight } from "../icons";
+import { CheckCircle, ArrowRight } from "../icons";
 
 const WORKBENCHES = [
   {
     id: "plc",
-    name: "01. Industrial PLC Racks",
+    name: "Industrial PLC Racks",
     tagline: "Siemens S7-1200 / S7-1500 & Allen-Bradley Micro850",
-    icon: Cpu,
-    color: "#6803F5",
     description:
       "Physical control panels where engineers wire 24VDC loops, test contactor interlocks, and download ladder logic to physical programmable logic controllers.",
     specs: [
@@ -24,10 +22,8 @@ const WORKBENCHES = [
   },
   {
     id: "scada",
-    name: "02. SCADA & HMI Supervisory Suite",
+    name: "SCADA & HMI Supervisory Suite",
     tagline: "Wonderware InTouch, Siemens WinCC & Ignition",
-    icon: Monitor,
-    color: "#276CB9",
     description:
       "Dual-monitor supervisory workstations connected over industrial Ethernet to live PLC racks for real-time telemetry, tag animation, and database alarms.",
     specs: [
@@ -41,10 +37,8 @@ const WORKBENCHES = [
   },
   {
     id: "bms",
-    name: "03. BMS HVAC & Energy Testbed",
+    name: "BMS HVAC & Energy Testbed",
     tagline: "BACnet IP, Modbus RTU & Chiller Plant Automation",
-    icon: Activity,
-    color: "#27B2DD",
     description:
       "Specialized infrastructure test bench simulating commercial building automation: air handlers, chillers, energy sub-metering, and temperature profiling.",
     specs: [
@@ -58,10 +52,8 @@ const WORKBENCHES = [
   },
   {
     id: "cctv",
-    name: "04. IP CCTV & Optical Fiber Ring",
+    name: "IP CCTV & Optical Fiber Ring",
     tagline: "Hikvision 4K, Managed PoE+ & SFP Media Converters",
-    icon: ShieldCheck,
-    color: "#0F172A",
     description:
       "Complete physical security infrastructure workstation covering IP camera network topology, optical fiber backbones, and smart video analytics.",
     specs: [
@@ -75,10 +67,8 @@ const WORKBENCHES = [
   },
   {
     id: "embedded",
-    name: "05. Embedded IoT & Microcontrollers",
+    name: "Embedded IoT & Microcontrollers",
     tagline: "STM32 ARM Cortex-M4, ESP32 & FreeRTOS",
-    icon: Server,
-    color: "#6803F5",
     description:
       "Electronics design desk with test and measurement instruments for bare-metal firmware engineering and industrial IoT gateway development.",
     specs: [
@@ -92,10 +82,8 @@ const WORKBENCHES = [
   },
   {
     id: "ai",
-    name: "06. Applied Edge AI & Inspection Rig",
+    name: "Applied Edge AI & Inspection Rig",
     tagline: "Computer Vision & Predictive Maintenance",
-    icon: Code,
-    color: "#276CB9",
     description:
       "Automated inspection testing station with high-resolution USB industrial cameras, running real-time defect detection models and vibration anomaly analytics.",
     specs: [
@@ -126,7 +114,7 @@ export default function InteractiveWorkbench() {
           </p>
         </div>
 
-        {/* Tab Selector Buttons - Compact Pill Strip */}
+        {/* Tab Selector Buttons - Clean Names, No Numbers */}
         <div className="flex flex-wrap gap-1.5 mb-6 p-1 rounded-2xl bg-slate-50 border border-slate-200/80">
           {WORKBENCHES.map((item, idx) => {
             const isSelected = activeTab === idx;
@@ -147,7 +135,7 @@ export default function InteractiveWorkbench() {
           })}
         </div>
 
-        {/* Active Workbench Detail Console - Compact Padding */}
+        {/* Active Workbench Detail Console */}
         <div className="rounded-3xl bg-slate-50 border border-slate-200 p-6 sm:p-8 transition-all duration-300">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-slate-200/80">
             <div className="space-y-1.5 max-w-xl">
@@ -170,7 +158,7 @@ export default function InteractiveWorkbench() {
             </div>
           </div>
 
-          {/* Technical Specifications Grid - Compact Gaps */}
+          {/* Technical Specifications Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6 font-normal">
             {bench.specs.map((spec, specIdx) => (
               <div
@@ -187,7 +175,7 @@ export default function InteractiveWorkbench() {
             ))}
           </div>
 
-          {/* Practical Capstone / Student Takeaway */}
+          {/* Practical Capstone */}
           <div className="mt-4 p-4 rounded-xl bg-purple-50/60 border border-purple-100 flex items-start gap-3">
             <CheckCircle className="w-4 h-4 text-[#6803F5] shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal">

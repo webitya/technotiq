@@ -35,17 +35,14 @@ export default function LabShowcase() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-12 sm:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-4">
           <div className="max-w-2xl">
-            <p className="text-xs font-normal tracking-wider text-[#6803F5] uppercase mb-3">
-              Hardware Lab Infrastructure
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight leading-tight">
               Learn on physical industrial hardware, not just simulator software.
             </h2>
-            <p className="mt-4 text-base text-slate-600 leading-relaxed font-normal">
+            <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               Industrial plants do not run on theoretical PowerPoint slides. At Technotiq,
               every trainee wires physical contactors, programs authentic PLCs, troubleshoots
               multimeter faults, and connects live HMI graphics to actual machines.
@@ -53,34 +50,34 @@ export default function LabShowcase() {
           </div>
 
           <div className="shrink-0">
-            <Button href="/contact" variant="secondary" size="md">
+            <Button href="/contact" variant="secondary" size="sm">
               <span>Book an in-person lab tour</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-3.5 h-3.5 ml-1" />
             </Button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {workbenches.map((bench, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:border-purple-200 hover:bg-purple-50/20 transition-all font-normal"
+              className="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-purple-200 hover:bg-purple-50/20 transition-all font-normal"
             >
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono font-normal text-[#6803F5] uppercase tracking-wider">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-mono font-normal text-[#6803F5]">
                   {bench.specs}
                 </span>
                 <span className="text-xs text-slate-400 font-mono font-normal">Real Equipment</span>
               </div>
 
-              <h3 className="text-xl font-medium text-slate-900 mb-3">{bench.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
+              <h3 className="text-lg font-medium text-slate-900 mb-2">{bench.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 font-normal">
                 {bench.description}
               </p>
 
-              <div className="pt-4 border-t border-slate-200/70 flex items-start gap-2.5">
+              <div className="pt-3 border-t border-slate-200/70 flex items-start gap-2">
                 <CheckCircle className="w-4 h-4 text-[#27B2DD] shrink-0 mt-0.5" />
-                <p className="text-xs sm:text-sm text-slate-800 font-normal">
+                <p className="text-xs text-slate-800 font-normal">
                   <span className="text-slate-500">Key Competency: </span>
                   {bench.outcomes}
                 </p>

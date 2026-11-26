@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative overflow-hidden pt-6 pb-12 lg:pt-10 lg:pb-16 hero-scene-bg subtle-blueprint-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
-          {/* Main Hero Copy - Clean, No Heading Badge */}
+          {/* Main Hero Copy - Clean, Direct, No Extraneous Text */}
           <div className="lg:col-span-7 space-y-5 z-20">
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-slate-900 leading-[1.12]">
@@ -40,10 +40,6 @@ export default function Hero() {
               </Button>
             </div>
 
-            <p className="text-xs sm:text-sm font-normal text-slate-500 tracking-wide">
-              Technology. Innovation. Excellence. — Building Skills. Delivering Solutions. Shaping the Future.
-            </p>
-
             {/* Compact Hardware Metrics */}
             <div className="pt-5 border-t border-slate-200/70 grid grid-cols-3 gap-4 max-w-md font-normal">
               <div>
@@ -73,7 +69,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: 3D Geometric Crystal Scene with Neon Light Ray */}
+          {/* Right Column: Pure 3D Geometric Crystal Scene with Neon Light Ray (No Unwanted Text) */}
           <div className="lg:col-span-5 relative z-10 flex items-center justify-center">
             <GeometricHeroVisual />
           </div>

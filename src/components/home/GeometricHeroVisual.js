@@ -5,7 +5,7 @@ export default function GeometricHeroVisual() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-gradient-to-tr from-[#6803F5]/15 via-[#9333EA]/10 to-[#27B2DD]/10 rounded-full blur-3xl" />
       <div className="absolute top-1/4 right-1/4 w-[240px] h-[240px] bg-[#E7E2FF]/80 rounded-full blur-2xl" />
 
-      {/* Main SVG Composition reproducing the 3D Geometric Blocks & Neon Ray */}
+      {/* Main SVG Composition reproducing the 3D Geometric Blocks & Neon Ray - Clean with NO random text */}
       <svg
         className="relative z-10 w-full h-full max-w-[540px] drop-shadow-2xl"
         viewBox="0 0 600 550"
@@ -13,7 +13,6 @@ export default function GeometricHeroVisual() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          {/* Gradients matching sampled pixel colors from original image */}
           {/* Top Face of Main Cube */}
           <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
@@ -114,9 +113,8 @@ export default function GeometricHeroVisual() {
           <polygon points="440,170 490,135 490,195 440,230" fill="#27B2DD" fillOpacity="0.5" stroke="#7DD3FC" strokeWidth="0.8" />
         </g>
 
-        {/* Diagonal Luminous Neon Laser Beam (The signature visual element from screenshot) */}
+        {/* Diagonal Luminous Neon Laser Beam */}
         <g filter="url(#laserGlow)">
-          {/* Soft outer aura */}
           <line
             x1="60"
             y1="490"
@@ -127,7 +125,6 @@ export default function GeometricHeroVisual() {
             strokeLinecap="round"
             opacity="0.35"
           />
-          {/* Intense core ray */}
           <line
             x1="80"
             y1="470"
@@ -137,7 +134,6 @@ export default function GeometricHeroVisual() {
             strokeWidth="5"
             strokeLinecap="round"
           />
-          {/* Pure white core streak */}
           <line
             x1="220"
             y1="340"
@@ -148,17 +144,6 @@ export default function GeometricHeroVisual() {
             strokeLinecap="round"
             opacity="0.95"
           />
-        </g>
-
-        {/* Subtle Engineering Coordinates & Telemetry Markers (Human Craft Detail) */}
-        <g fill="#64748B" fontSize="10" fontFamily="JetBrains Mono, monospace" opacity="0.75">
-          <text x="70" y="380">SYS_IO // 24VDC</text>
-          <text x="70" y="395">MODBUS_TCP : 502</text>
-          <circle cx="60" cy="377" r="2.5" fill="#6803F5" />
-
-          <text x="440" y="420">BACnet/IP : ONLINE</text>
-          <text x="440" y="435">PLC_CYCLE : 12ms</text>
-          <circle cx="430" cy="417" r="2.5" fill="#27B2DD" />
         </g>
       </svg>
     </div>
