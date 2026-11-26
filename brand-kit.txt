@@ -131,13 +131,13 @@ Visual Persona:            Futuristic, Precision-Driven, Technologically Advance
 --------------------------------------------------------------------------------
 Element               Font Family          Weight         Size (Desktop/Mobile)   Line Height    Letter Spacing
 --------------------  -------------------  -------------  ----------------------  -------------  --------------
-Hero Eyebrow Badge    Plus Jakarta Sans    Medium (500)   13px - 14px             1.4            +0.02em
-Hero Headline (H1)    Plus Jakarta Sans    Bold (700)     48px - 60px / 32px      1.15           -0.03em
-Section Title (H2)    Plus Jakarta Sans    SemiBold(600)  32px - 38px / 24px      1.25           -0.02em
-Card / Sub-Head (H3)  Plus Jakarta Sans    SemiBold(600)  20px - 24px / 18px      1.35           -0.01em
+Hero Eyebrow Badge    Plus Jakarta Sans    Regular (400)  13px - 14px             1.4            +0.02em
+Hero Headline (H1)    Plus Jakarta Sans    Medium (500)   44px - 56px / 32px      1.15           -0.02em
+Section Title (H2)    Plus Jakarta Sans    Medium (500)   28px - 36px / 24px      1.25           -0.015em
+Card / Sub-Head (H3)  Plus Jakarta Sans    Medium (500)   18px - 22px / 18px      1.35           -0.01em
 Body Text (Regular)   Inter                Regular (400)  16px / 15px             1.65           normal
 Body Text (Small)     Inter                Regular (400)  14px / 13px             1.5            normal
-Button Text           Plus Jakarta Sans    Medium (500)   14px - 15px             1.0            normal
+Button Text           Plus Jakarta Sans    Regular/Medium 14px - 15px             1.0            normal
 
 
 ================================================================================

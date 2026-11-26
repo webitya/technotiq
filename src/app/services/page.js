@@ -2,7 +2,7 @@ import PageHeader from "../../components/layout/PageHeader";
 import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
 import Link from "next/link";
-import { Cpu, Server, Code, Activity, ShieldCheck, Wrench, CheckCircle, ArrowRight } from "../../components/icons";
+import { Cpu, Server, Code, Activity, ShieldCheck, CheckCircle, ArrowRight } from "../../components/icons";
 
 export const metadata = {
   title: "Services | Turnkey Industrial Automation & Enterprise IT",
@@ -140,7 +140,7 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 id={service.id}
-                className="scroll-mt-28 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm hover:border-slate-300 transition-all"
+                className="scroll-mt-28 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm hover:border-slate-300 transition-all font-normal"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
                   <div className="lg:max-w-md space-y-4">
@@ -148,15 +148,15 @@ export default function ServicesPage() {
                       <div className={`p-3 rounded-2xl ${service.bgColor} ${service.color}`}>
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-xs font-mono font-medium text-slate-500 uppercase tracking-wider">
+                      <span className="text-xs font-mono font-normal text-slate-500 uppercase tracking-wider">
                         Service 0{idx + 1}
                       </span>
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight">
                       {service.title}
                     </h2>
-                    <p className="text-xs font-mono text-[#6803F5] uppercase tracking-wide">
+                    <p className="text-xs font-mono text-[#6803F5] uppercase tracking-wide font-normal">
                       {service.subtitle}
                     </p>
 
@@ -173,10 +173,10 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="lg:flex-1 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200">
-                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
+                    <h3 className="text-sm font-medium uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
                       Standard Deliverables & Capabilities
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 font-normal">
                       {service.deliverables.map((item, itemIdx) => (
                         <li key={itemIdx} className="flex items-start gap-3 text-sm text-slate-700">
                           <CheckCircle className="w-4 h-4 text-[#27B2DD] shrink-0 mt-0.5" />
@@ -193,13 +193,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Engineering Delivery Process */}
-      <section className="py-20 bg-slate-900 text-white border-t border-slate-800">
+      <section className="py-20 bg-slate-900 text-white border-t border-slate-800 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <p className="text-xs font-semibold tracking-wider text-[#27B2DD] uppercase mb-3">
+            <p className="text-xs font-normal tracking-wider text-[#27B2DD] uppercase mb-3">
               Delivery Methodology
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-white leading-tight">
               A structured lifecycle designed for zero operational surprises.
             </h2>
           </div>
@@ -210,10 +210,10 @@ export default function ServicesPage() {
                 key={idx}
                 className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80 backdrop-blur-sm"
               >
-                <span className="text-2xl font-mono font-bold text-[#8B5CF6] block mb-4">
+                <span className="text-2xl font-mono font-medium text-[#8B5CF6] block mb-4">
                   {step.step}
                 </span>
-                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                <h3 className="text-lg font-medium text-white mb-2">{step.title}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed font-normal">
                   {step.desc}
                 </p>

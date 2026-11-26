@@ -2,7 +2,7 @@ import PageHeader from "../../components/layout/PageHeader";
 import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
 import Link from "next/link";
-import { Cpu, Activity, ShieldCheck, Server, Code, Clock, Award, Users, CheckCircle, ArrowRight } from "../../components/icons";
+import { Clock, CheckCircle, ArrowRight } from "../../components/icons";
 
 export const metadata = {
   title: "Courses & Training | Industrial Automation, PLC, SCADA, BMS, Embedded, AI",
@@ -138,22 +138,22 @@ export default function CoursesPage() {
             <div
               key={course.id}
               id={course.id}
-              className="scroll-mt-28 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm hover:border-purple-200 transition-all"
+              className="scroll-mt-28 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm hover:border-purple-200 transition-all font-normal"
             >
               <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
                 <div className="lg:max-w-md space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-[#6803F5] uppercase tracking-wider">
+                    <span className="text-xs font-mono font-medium text-[#6803F5] uppercase tracking-wider">
                       Track 0{idx + 1}
                     </span>
                     <span className="text-xs text-slate-400 font-mono">•</span>
-                    <span className="text-xs font-mono text-slate-600 flex items-center gap-1">
+                    <span className="text-xs font-mono text-slate-600 flex items-center gap-1 font-normal">
                       <Clock className="w-3.5 h-3.5 text-[#27B2DD]" />
                       {course.duration}
                     </span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                  <h2 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight">
                     {course.title}
                   </h2>
 
@@ -161,14 +161,14 @@ export default function CoursesPage() {
                     {course.overview}
                   </p>
 
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200/80 space-y-2 text-xs">
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200/80 space-y-2 text-xs font-normal">
                     <div>
-                      <span className="text-slate-500 font-medium block">Hardware Rigs:</span>
-                      <span className="text-slate-800 font-semibold">{course.hardware}</span>
+                      <span className="text-slate-500 block">Hardware Rigs:</span>
+                      <span className="text-slate-800 font-normal">{course.hardware}</span>
                     </div>
                     <div>
-                      <span className="text-slate-500 font-medium block">Software & Platforms:</span>
-                      <span className="text-slate-800 font-semibold">{course.scada}</span>
+                      <span className="text-slate-500 block">Software & Platforms:</span>
+                      <span className="text-slate-800 font-normal">{course.scada}</span>
                     </div>
                   </div>
 
@@ -182,10 +182,10 @@ export default function CoursesPage() {
 
                 <div className="lg:flex-1 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 space-y-6">
                   <div>
-                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
+                    <h3 className="text-sm font-medium uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
                       Curriculum Syllabus Modules
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 font-normal">
                       {course.modules.map((mod, modIdx) => (
                         <li key={modIdx} className="flex items-start gap-3 text-sm text-slate-700">
                           <CheckCircle className="w-4 h-4 text-[#6803F5] shrink-0 mt-0.5" />
@@ -195,11 +195,11 @@ export default function CoursesPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-purple-50/60 border border-purple-100 text-xs sm:text-sm text-slate-800">
-                    <span className="font-bold text-[#6803F5] block mb-1">
+                  <div className="p-4 rounded-xl bg-purple-50/60 border border-purple-100 text-xs sm:text-sm text-slate-800 font-normal">
+                    <span className="font-medium text-[#6803F5] block mb-1">
                       Capstone Project:
                     </span>
-                    <p className="font-normal">{course.capstone}</p>
+                    <p>{course.capstone}</p>
                   </div>
                 </div>
               </div>
@@ -209,23 +209,23 @@ export default function CoursesPage() {
       </section>
 
       {/* Placement & Lab Methodology */}
-      <section className="py-20 bg-slate-900 text-white border-t border-slate-800">
+      <section className="py-20 bg-slate-900 text-white border-t border-slate-800 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <p className="text-xs font-semibold tracking-wider text-[#27B2DD] uppercase mb-3">
+            <p className="text-xs font-normal tracking-wider text-[#27B2DD] uppercase mb-3">
               The Technotiq Advantage
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-white leading-tight">
               How we turn college graduates into field-ready commissioning engineers.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80">
-              <span className="text-xs font-mono text-[#8B5CF6] block mb-2 font-bold">
+              <span className="text-xs font-mono text-[#8B5CF6] block mb-2 font-medium">
                 PHASE 01
               </span>
-              <h3 className="text-lg font-bold text-white mb-2">Electrical & Hardware Baseline</h3>
+              <h3 className="text-lg font-medium text-white mb-2">Electrical & Hardware Baseline</h3>
               <p className="text-sm text-slate-300 leading-relaxed font-normal">
                 Hands-on safety protocol, reading electrical schematics, multimeter debugging,
                 relay logic, and sensor wire terminations before writing a single line of code.
@@ -233,10 +233,10 @@ export default function CoursesPage() {
             </div>
 
             <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80">
-              <span className="text-xs font-mono text-[#27B2DD] block mb-2 font-bold">
+              <span className="text-xs font-mono text-[#27B2DD] block mb-2 font-medium">
                 PHASE 02
               </span>
-              <h3 className="text-lg font-bold text-white mb-2">Controllers & Supervisory SCADA</h3>
+              <h3 className="text-lg font-medium text-white mb-2">Controllers & Supervisory SCADA</h3>
               <p className="text-sm text-slate-300 leading-relaxed font-normal">
                 Writing ladder logic, creating tags, configuring alarms, tuning VFDs, and
                 connecting multi-node networks over Modbus and Industrial Ethernet.
@@ -244,10 +244,10 @@ export default function CoursesPage() {
             </div>
 
             <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80">
-              <span className="text-xs font-mono text-[#60A5FA] block mb-2 font-bold">
+              <span className="text-xs font-mono text-[#60A5FA] block mb-2 font-medium">
                 PHASE 03
               </span>
-              <h3 className="text-lg font-bold text-white mb-2">Capstone Rig & Placement Drives</h3>
+              <h3 className="text-lg font-medium text-white mb-2">Capstone Rig & Placement Drives</h3>
               <p className="text-sm text-slate-300 leading-relaxed font-normal">
                 Independently wiring, programming, and debugging a complete automated system,
                 followed by technical mock interviews and direct plant referrals.

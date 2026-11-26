@@ -2,7 +2,7 @@ import PageHeader from "../../components/layout/PageHeader";
 import ConsultationCta from "../../components/home/ConsultationCta";
 import Button from "../../components/ui/Button";
 import Link from "next/link";
-import { Wrench, Award, ShieldCheck, Users, CheckCircle, ArrowRight, MapPin, Phone, Mail } from "../../components/icons";
+import { ArrowRight, MapPin } from "../../components/icons";
 
 export const metadata = {
   title: "About Us | Technotiq Automation Private Limited",
@@ -48,10 +48,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <p className="text-xs font-semibold tracking-wider text-[#6803F5] uppercase">
+              <p className="text-xs font-normal tracking-wider text-[#6803F5] uppercase">
                 Our Foundation & Mission
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
                 Built by engineers who have spent thousands of hours on factory floors.
               </h2>
               <div className="space-y-4 text-base text-slate-600 leading-relaxed font-normal">
@@ -63,7 +63,7 @@ export default function AboutPage() {
                   relay panels.
                 </p>
                 <p>
-                  <strong>Technotiq Automation Private Limited</strong> was established in Ranchi,
+                  Technotiq Automation Private Limited was established in Ranchi,
                   Jharkhand, to fundamentally solve this problem. We built a physical laboratory
                   stocked with real industrial hardware, designed by senior commissioning engineers
                   who have delivered turnkey automation across manufacturing plants, utilities,
@@ -89,17 +89,17 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl space-y-6">
-                <h3 className="text-xl font-bold text-white tracking-tight border-b border-slate-800 pb-4">
+              <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl space-y-6 font-normal">
+                <h3 className="text-lg font-medium text-white tracking-tight border-b border-slate-800 pb-4">
                   Organization Credentials
                 </h3>
 
-                <div className="space-y-4 text-sm text-slate-300">
+                <div className="space-y-4 text-sm text-slate-300 font-normal">
                   <div>
                     <span className="text-xs font-mono text-slate-500 uppercase block">
                       Entity Name
                     </span>
-                    <span className="text-white font-medium text-base">
+                    <span className="text-white font-normal text-base">
                       Technotiq Automation Private Limited
                     </span>
                   </div>
@@ -139,7 +139,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800 text-xs text-slate-400">
+                <div className="pt-4 border-t border-slate-800 text-xs text-slate-400 font-normal">
                   <p>Building Skills. Delivering Solutions. Shaping the Future.</p>
                 </div>
               </div>
@@ -152,10 +152,10 @@ export default function AboutPage() {
       <section className="py-20 bg-slate-50 border-t border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <p className="text-xs font-semibold tracking-wider text-[#6803F5] uppercase mb-3">
+            <p className="text-xs font-normal tracking-wider text-[#6803F5] uppercase mb-3">
               Guiding Principles
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 tracking-tight leading-tight">
               Our engineering philosophy is grounded in discipline.
             </h2>
           </div>
@@ -167,10 +167,10 @@ export default function AboutPage() {
                 className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-xs font-mono font-bold text-[#6803F5] block mb-4">
+                  <span className="text-xs font-mono font-medium text-[#6803F5] block mb-4">
                     0{idx + 1}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 mb-3">{val.title}</h3>
+                  <h3 className="text-lg font-medium text-slate-900 mb-3">{val.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed font-normal">
                     {val.description}
                   </p>

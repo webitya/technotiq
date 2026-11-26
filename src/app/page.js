@@ -5,7 +5,7 @@ import ConsultationCta from "../components/home/ConsultationCta";
 import FaqAccordion from "../components/ui/FaqAccordion";
 import Button from "../components/ui/Button";
 import Link from "next/link";
-import { CheckCircle, Award, Users, ArrowRight, ShieldCheck, Cpu } from "../components/icons";
+import { Award, ShieldCheck, Cpu, ArrowRight } from "../components/icons";
 
 export const metadata = {
   title: "Technotiq | Industrial Automation, IT Solutions & Training",
@@ -57,10 +57,10 @@ export default function HomePage() {
       <section className="py-20 bg-slate-900 text-white border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <p className="text-xs font-semibold tracking-wider text-[#27B2DD] uppercase mb-3">
+            <p className="text-xs font-normal tracking-wider text-[#27B2DD] uppercase mb-3">
               Proven Track Record
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-white leading-tight">
               From our test benches to major industrial plants.
             </h2>
             <p className="mt-4 text-base text-slate-300 leading-relaxed font-normal">
@@ -75,10 +75,10 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-[#8B5CF6] flex items-center justify-center mb-6">
                 <Award className="w-6 h-6" />
               </div>
-              <p className="text-3xl sm:text-4xl font-bold text-white font-heading">
+              <p className="text-3xl sm:text-4xl font-medium text-white font-heading">
                 94%
               </p>
-              <h3 className="text-lg font-bold text-white mt-2 mb-2">
+              <h3 className="text-lg font-medium text-white mt-2 mb-2">
                 Placement Assistance
               </h3>
               <p className="text-sm text-slate-400 leading-relaxed font-normal">
@@ -91,10 +91,10 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 text-[#27B2DD] flex items-center justify-center mb-6">
                 <Cpu className="w-6 h-6" />
               </div>
-              <p className="text-3xl sm:text-4xl font-bold text-white font-heading">
+              <p className="text-3xl sm:text-4xl font-medium text-white font-heading">
                 120+
               </p>
-              <h3 className="text-lg font-bold text-white mt-2 mb-2">
+              <h3 className="text-lg font-medium text-white mt-2 mb-2">
                 Hands-on Lab Hours
               </h3>
               <p className="text-sm text-slate-400 leading-relaxed font-normal">
@@ -107,10 +107,10 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-[#60A5FA] flex items-center justify-center mb-6">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <p className="text-3xl sm:text-4xl font-bold text-white font-heading">
+              <p className="text-3xl sm:text-4xl font-medium text-white font-heading">
                 40+
               </p>
-              <h3 className="text-lg font-bold text-white mt-2 mb-2">
+              <h3 className="text-lg font-medium text-white mt-2 mb-2">
                 Delivered Engineering Projects
               </h3>
               <p className="text-sm text-slate-400 leading-relaxed font-normal">
@@ -123,7 +123,7 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <Link
               href="/courses"
-              className="inline-flex items-center text-sm font-semibold text-[#27B2DD] hover:underline"
+              className="inline-flex items-center text-sm font-normal text-[#27B2DD] hover:underline"
             >
               <span>Explore course tracks, hardware kits, and batch schedules</span>
               <ArrowRight className="w-4 h-4 ml-1.5" />
