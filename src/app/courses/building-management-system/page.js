@@ -1,5 +1,6 @@
 import PageHeader from "../../../components/layout/PageHeader";
-import CourseCatalog from "../../../components/courses/CourseCatalog";
+import CourseCard from "../../../components/courses/CourseCard";
+import { ALL_COURSES } from "../../../data/coursesData";
 
 export const metadata = {
   title: "Building Management System (BMS) Courses | HVAC Automation & CCTV Training",
@@ -8,6 +9,10 @@ export const metadata = {
 };
 
 export default function BuildingManagementSystemCategoryPage() {
+  const courses = ALL_COURSES.filter(
+    (c) => c.category === "building-management-system"
+  );
+
   return (
     <div>
       <PageHeader
@@ -22,7 +27,11 @@ export default function BuildingManagementSystemCategoryPage() {
 
       <section className="py-10 sm:py-14 lg:py-16 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CourseCatalog initialCategory="building-management-system" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {courses.map((course) => (
+              <CourseCard key={course.id} course={course} />
+            ))}
+          </div>
         </div>
       </section>
     </div>
