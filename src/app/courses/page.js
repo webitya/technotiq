@@ -38,10 +38,10 @@ export default function CoursesPage() {
         breadcrumbs={[{ name: "Courses" }]}
       />
 
-      {/* Courses Catalog with Category Switcher Tabs */}
+      {/* Courses Catalog with Center Two-Button Switcher and Compact Cards */}
       <section className="py-10 sm:py-14 lg:py-16 bg-white font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CourseCatalog initialCategory="all" />
+          <CourseCatalog initialCategory="industrial-automation" />
         </div>
       </section>
 

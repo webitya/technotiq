@@ -51,18 +51,8 @@ export default function IndustrialAutomationCategoryPage() {
             </Link>
           </div>
 
-          {/* Category Description Banner */}
-          <div className="p-6 rounded-3xl bg-purple-50/70 border border-purple-100 space-y-2">
-            <span className="text-xs font-mono font-medium text-[#6803F5] block">
-              {categoryMeta.tagline}
-            </span>
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed max-w-3xl font-normal">
-              {categoryMeta.description}
-            </p>
-          </div>
-
-          {/* Course Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
+          {/* Small Compact Course Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {courses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
